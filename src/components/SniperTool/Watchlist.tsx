@@ -1,16 +1,6 @@
-export const watchlist: Array<any> = [
-  {
-    mint: "4464",
-    data: { name: "Binary Punk #8506" },
-    type: "rank",
-    rank: "747",
-  },
-  {
-    mint: "4469",
-    data: { name: "Binary Punk #7436" },
-    type: "appearance",
-    rank: "Rank",
-  },
+import { Item } from './types';
+
+export const watchlist: Array<Item> = [
   {
     mint: "4473",
     data: { name: "Binary Punk #5684" },

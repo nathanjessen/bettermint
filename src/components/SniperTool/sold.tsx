@@ -1,4 +1,6 @@
-export const sold: Array<any> = [
+import { Item } from './types';
+
+export const sold: Array<Item> = [
   {
     mint: "0",
     data: { name: "Binary Punk #52" },
@@ -808,5 +810,11 @@ export const sold: Array<any> = [
     data: { name: "Binary Punk #3398" },
     type: "background",
     rank: "Rank",
+  },
+  {
+    mint: "4464",
+    data: { name: "Binary Punk #8506" },
+    type: "rank",
+    rank: "747",
   },
 ];

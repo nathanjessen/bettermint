@@ -166,7 +166,7 @@ const SniperTool = () => {
     const getItems = async () => {
       setLoading(true);
       let tempItems: Array<any> = [];
-      const current = 4440;
+      const current = 4466;
       const target = current + 25;
 
       for (let i = current, j = target; i < j; i++) {
