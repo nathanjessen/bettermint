@@ -166,7 +166,7 @@ const SniperTool = () => {
     const getItems = async () => {
       setLoading(true);
       let tempItems: Array<any> = [];
-      const current = 4466;
+      const current = 4470;
       const target = current + 25;
 
       for (let i = current, j = target; i < j; i++) {
@@ -192,7 +192,7 @@ const SniperTool = () => {
   }, []);
 
   return (
-    <div className='p-4 overflow-y-scroll h-full'>
+    <div className='p-4'>
       <div className='w-72 mb-4'>
         <Listbox value={selected} onChange={setSelected}>
           <div className='relative mt-1'>
