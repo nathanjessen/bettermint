@@ -2,12 +2,6 @@ import { Item } from './types';
 
 export const watchlist: Array<Item> = [
   {
-    mint: "4473",
-    data: { name: "Binary Punk #5684" },
-    type: "rank",
-    rank: "57",
-  },
-  {
     mint: "4489",
     data: { name: "Binary Punk #5721" },
     type: "rank",

@@ -817,4 +817,10 @@ export const sold: Array<Item> = [
     type: "rank",
     rank: "747",
   },
+  {
+    mint: "4473",
+    data: { name: "Binary Punk #5684" },
+    type: "rank",
+    rank: "57",
+  },
 ];
