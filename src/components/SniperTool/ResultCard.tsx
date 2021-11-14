@@ -31,7 +31,7 @@ export const ResultCard = ({
       </div>
       <div className='flex-1 bg-white dark:bg-gray-800 p-4 flex justify-between'>
         <div className='flex-1'>
-          <p className='text-base font-semibold text-gray-900 dark:text-gray-100'>
+          <p className='text-sm font-semibold text-gray-900 dark:text-gray-100'>
             <a
               className='text-blue-600 hover:text-blue-900'
               href={`${directory}/${mint}.json`}
@@ -40,8 +40,8 @@ export const ResultCard = ({
               {mint}
             </a>
           </p>
-          <p className='mt-1 text-sm text-gray-600 dark:text-gray-300 line-clamp-3'>
-            {data.name}
+          <p className='mt-1 text-xs text-gray-600 dark:text-gray-300 truncate'>
+            #{itemNum}
           </p>
         </div>
         <div className='flex flex-col items-end'>
@@ -56,7 +56,7 @@ export const ResultCard = ({
             </a>
           </div>
           {type && (
-            <div className='font-medium text-green-600 dark:text-green-500 flex gap-2'>
+            <div className='text-xs font-medium text-green-600 dark:text-green-500 flex gap-2'>
               {type}
             </div>
           )}
