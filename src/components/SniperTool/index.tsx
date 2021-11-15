@@ -270,7 +270,7 @@ const SniperTool = () => {
           </Listbox>
         </div>
 
-        <div className="w-96 flex">
+        <div className="w-72 flex">
           <label htmlFor="currentMint" className="sr-only">
             Current
           </label>
@@ -289,6 +289,12 @@ const SniperTool = () => {
             onClick={onSetCurrent}>
             Go
           </button>
+        </div>
+
+        <div className="w-72">
+          <a
+            className="-ml-px relative inline-flex items-center px-4 py-2 rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+            href="https://ftmscan.com/token/0xd5eb80f437c318b3bf8b3af985224966a3054f76" target="_blank" rel="noreferrer">FTM Scan</a>
         </div>
       </div>
 
