@@ -17,7 +17,6 @@ const groups = [
   { name: "Rank" },
   { name: "Zombie" },
   { name: "ApeOnlyIsland" },
-  { name: "Owned" },
   { name: "Sold" },
 ];
 
@@ -32,6 +31,12 @@ const SniperTool = () => {
 
   const [current, setCurrent] = useState<number>();
   const [inputVal, setInputVal] = useState<string | number>('');
+
+  const onEnter = (event: any) => {
+    if (event.charCode === 13) {
+      onSetCurrent();
+    }
+  };
 
   useEffect(() => {
     switch (selected.name) {
@@ -57,9 +62,6 @@ const SniperTool = () => {
         break;
       case "Sold":
         setResults(sold);
-        break;
-      case "Owned":
-        setResults(sold.filter((item) => item.type.includes("owned")));
         break;
       case "Upcoming":
         setResults([...recent, ...upcoming]);
@@ -280,8 +282,9 @@ const SniperTool = () => {
             id="currentMint"
             value={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
+            onKeyPress={(e) => onEnter(e)}
             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-l-md"
-            placeholder="4480"
+            placeholder="4600"
           />
           <button
             type="button"

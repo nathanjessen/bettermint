@@ -2,24 +2,6 @@ import { Item } from './types';
 
 export const watchlist: Array<Item> = [
   {
-    mint: "4499",
-    data: { name: "Binary Punk #4485" },
-    type: "background",
-    rank: "Rank",
-  },
-  {
-    mint: "4508",
-    data: { name: "Binary Punk #8368" },
-    type: "appearance",
-    rank: "Rank",
-  },
-  {
-    mint: "4600",
-    data: { name: "Binary Punk #7804" },
-    type: "alien",
-    rank: "2, 14",
-  },
-  {
     mint: "4614",
     data: { name: "Binary Punk #7270" },
     type: "background",
