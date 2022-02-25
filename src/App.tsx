@@ -1,5 +1,5 @@
 import React from "react";
-import SniperTool from "./components/SniperTool";
+import SniperTool from "./pages/SniperTool";
 
 function App() {
   return (
