@@ -1,6 +1,8 @@
+import { IItem } from "../../typings/types";
+
 export interface ResultCardProps {
   directory?: string;
-  item: any;
+  item: IItem;
 }
 
 export const ResultCard = ({

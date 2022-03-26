@@ -1,4 +1,4 @@
-export interface Item {
+export interface IItem {
     mint: string;
     data: any;
 }
@@ -18,5 +18,4 @@ export interface ITier {
     name: string;
     description: string;
     price: number;
-    href: string;
 }

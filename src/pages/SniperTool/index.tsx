@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { items } from "../../data/items";
-import { Item, ICollection } from "../../typings/types";
+import { IItem, ICollection } from "../../typings/types";
 import { CollectionDetails } from "../../components/CollectionDetails";
 import { ItemGrid } from "../../components/ItemGrid";
 import PriceTiers from "../../components/PriceTiers";
@@ -10,8 +10,8 @@ const SniperTool = () => {
   const [contractAddress, setContractAddress] = useState<string>('');
   const [collection, setCollection] = useState<ICollection | undefined>();
   const [directory, setDirectory] = useState<string>('');
-  const [recent, setRecent] = useState<Array<Item>>([]);
-  const [upcoming, setUpcoming] = useState<Array<Item>>([]);
+  const [recent, setRecent] = useState<Array<IItem>>([]);
+  const [upcoming, setUpcoming] = useState<Array<IItem>>([]);
   // TODO: choose explorer for currently selected network
   const blockExplorer = 'https://ftmscan.com/token/';
   const [currContractAddress, setCurrContractAddress] = useState<string>('');
@@ -84,39 +84,49 @@ const SniperTool = () => {
   };
 
   return (
-    <div className='flex gap-4'>
-      <div className='w-2/5 p-4 sticky max-h-screen'>
-        <label htmlFor="contractAddress">
-          Contract Address
-        </label>
+    <div className='md:flex gap-4'>
+      <div className='md:w-1/3 p-4 max-h-screen md:sticky top-0'>
+        <div>
+          <label htmlFor="contractAddress">
+            Contract Address
+          </label>
 
-        <div className="flex">
-          <input
-            type="text"
-            name="contractAddress"
-            id="contractAddress"
-            value={contractAddress}
-            onChange={(e) => setContractAddress(e.target.value)}
-            onKeyPress={(e) => onEnter(e)}
-            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-l-md flex-grow z-10"
-            placeholder="0xd5eb80f437c318b3bf8b3af985224966a3054f76"
-          />
-          <button
-            type="button"
-            className="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
-            onClick={onGetCollection}>
-            Go
-          </button>
+          <div className="flex">
+            <input
+              type="text"
+              name="contractAddress"
+              id="contractAddress"
+              value={contractAddress}
+              onChange={(e) => setContractAddress(e.target.value)}
+              onKeyPress={(e) => onEnter(e)}
+              className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-l-md flex-grow z-10"
+              placeholder="0xd5eb80f437c318b3bf8b3af985224966a3054f76"
+            />
+            <button
+              type="button"
+              className="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+              onClick={onGetCollection}>
+              Go
+            </button>
+          </div>
         </div>
 
         {collection && (
-          <CollectionDetails collection={collection} explorer={blockExplorer + currContractAddress} />
-        )}
+          <>
+            <CollectionDetails collection={collection} explorer={blockExplorer + currContractAddress} />
 
-        <PriceTiers />
+            <div className="mt-8">
+              <PriceTiers />
+            </div>
+          </>
+        )}
       </div>
 
-      <ItemGrid loading={loading} upcoming={upcoming} recent={recent} collection={collection} directory={directory} />
+      <div className="md:w-2/3 p-4 bg-gray-200 min-h-screen">
+        {collection && (
+          <ItemGrid loading={loading} upcoming={upcoming} recent={recent} collection={collection} directory={directory} />
+        )}
+      </div>
     </div>
   );
 };

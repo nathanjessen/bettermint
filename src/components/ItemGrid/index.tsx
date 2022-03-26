@@ -1,18 +1,18 @@
-import React from 'react';
 import ReactLoading from "react-loading";
+import { ICollection, IItem } from "../../typings/types";
 import { ResultCard } from "../ResultCard/ResultCard";
 
 export interface ItemGridProps {
   loading?: boolean;
-  recent?: Array<any>;
-  upcoming?: Array<any>;
-  collection?: any;
+  recent?: Array<IItem>;
+  upcoming?: Array<IItem>;
+  collection?: ICollection;
   directory?: string;
 }
 
 export const ItemGrid = ({ loading = true, recent, upcoming, collection, directory }: ItemGridProps) => {
   return (
-    <div className='w-3/5 p-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 bg-gray-200 min-h-screen'>
+    <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4'>
       {loading ? (
         <ReactLoading
           type='bubbles'

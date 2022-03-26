@@ -1,6 +1,6 @@
-import { Item } from '../typings/types';
+import { IItem } from '../typings/types';
 
-export const items: Array<Item> = [
+export const items: Array<IItem> = [
   {
     mint: "4614",
     data: {
