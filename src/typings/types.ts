@@ -5,13 +5,14 @@ export interface IItem {
 
 export interface ICollection {
     name: string;
+    symbol: string;
+    totalSupply?: string | number;
     description?: string;
+    attributes?: any;
+    current?: string | number;
     directory?: string;
     metadata?: string;
     api?: string;
-    attributes?: any;
-    current?: string | number;
-    max?: string | number;
 }
 
 export interface ITier {

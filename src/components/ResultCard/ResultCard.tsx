@@ -14,10 +14,10 @@ export const ResultCard = ({
       <div className='flex-shrink-0 bg-blue-200'>
         <a href={data.image} target='_blank' rel='noreferrer'>
           <img
-            className='h-54 w-full object-scale-down'
+            className='w-full object-scale-down'
             style={{ minHeight: "100px" }}
             src={data.image}
-            alt=''
+            alt={data.name}
           />
         </a>
       </div>
@@ -38,7 +38,7 @@ export const ResultCard = ({
         </div>
         <div className='flex flex-col items-end'>
           <div className='flex-shrink-0'>
-
+            {/* Actions */}
           </div>
         </div>
       </div>
