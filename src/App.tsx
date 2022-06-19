@@ -1,12 +1,14 @@
 import { Suspense } from "react";
 import Loader from './components/Loader';
-import SniperTool from "./pages/SniperTool";
+import SearchResults from "./pages/SearchResults";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
     <div className='App'>
       <Suspense fallback={<Loader />}>
-        <SniperTool />
+        <LandingPage />
+        <SearchResults />
       </Suspense>
     </div>
   );

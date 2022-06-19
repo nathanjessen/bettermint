@@ -5,7 +5,7 @@ export const Loader = () => {
     <ReactLoading
       type='bars'
       color='currentColor'
-      className='text-blue-600 dark:text-blue-500'
+      className='text-green-600 dark:text-green-500'
     />
   );
 };

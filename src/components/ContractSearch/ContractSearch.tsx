@@ -1,48 +1,45 @@
-import { useState, ChangeEvent, KeyboardEvent, FormEvent } from "react";
+import { ChangeEvent, KeyboardEvent, FormEvent } from "react";
 import { ZERO_ADDRESS } from "../../constants";
 
-export interface ContractSearchProps {
-  onSearch?: (T: string) => void;
+export interface PureContractSearchProps {
+  contractAddress: string;
+  onSubmit?: (e: FormEvent<HTMLFormElement>) => void;
+  onClick?: () => void;
+  onChangeInput?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onKeyPress?: (e: KeyboardEvent<HTMLInputElement>) => void;
 }
 
-export const ContractSearch = ({ onSearch }: ContractSearchProps) => {
-  const [contractAddress, setContractAddress] = useState<string>('');
-
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => e.preventDefault();
-  const onClick = () => onSearch?.(contractAddress);
-  const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => setContractAddress(e.target.value);
-  const onKeyPress = (e: KeyboardEvent<HTMLInputElement>) => onEnter(e);
-
-  const onEnter = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      onSearch?.(contractAddress);
-    }
-  };
-
+export const PureContractSearch = ({ contractAddress, onSubmit, onClick, onChangeInput, onKeyPress }: PureContractSearchProps) => {
   return (
-    <form onSubmit={onSubmit}>
-      <label htmlFor="contractAddress" className="block mb-2">
-        Contract Address
-      </label>
+    <div className="text-center max-w-xl mx-auto py-16 sm:py-24">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-white sm:text-4xl">
+        NFT Collection
+      </h2>
 
-      <div className="flex">
-        <input
-          type="text"
-          name="contractAddress"
-          id="contractAddress"
-          value={contractAddress}
-          placeholder={ZERO_ADDRESS}
-          onChange={onChangeInput}
-          onKeyPress={onKeyPress}
-          className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-l-md flex-grow z-10"
-        />
-        <button
-          type="button"
-          onClick={onClick}
-          className="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
-          Go
-        </button>
-      </div>
-    </form>
+      <form onSubmit={onSubmit}>
+        <label htmlFor="contractAddress" className="text-xl text-green-100 mt-2 md:mt-3 mb-6 block">
+          search by name or contract address
+        </label>
+
+        <div className="flex">
+          <input
+            type="text"
+            name="contractAddress"
+            id="contractAddress"
+            value={contractAddress}
+            placeholder={ZERO_ADDRESS}
+            onChange={onChangeInput}
+            onKeyPress={onKeyPress}
+            className="block rounded-md flex-grow shadow-sm mr-3 z-10 border-2 border-green-700 focus:border-green-800 focus:ring-2 focus:ring-white text-sm md:text-base"
+          />
+          <button
+            type="button"
+            onClick={onClick}
+            className="py-3 px-6 md:px-8 md:py-4 rounded-md font-medium text-green-100 bg-green-800 border border-green-700 focus:border-green-800 hover:bg-green-900 focus:z-10 focus:outline-none focus:ring-2 focus:ring-white">
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };

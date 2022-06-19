@@ -4,10 +4,9 @@ import MintProgress from '../MintProgress';
 
 export interface CollectionDetailsProps {
   collection: ICollection;
-  explorer?: string;
 }
 
-export const CollectionDetails = ({ collection, explorer }: CollectionDetailsProps) => {
+export const CollectionDetails = ({ collection }: CollectionDetailsProps) => {
   return (
     <div>
       <h1 className='text-3xl'>{collection.name}</h1>
@@ -15,11 +14,9 @@ export const CollectionDetails = ({ collection, explorer }: CollectionDetailsPro
         {collection.symbol}
       </h2>
 
-      {explorer &&
-        <div className="my-4">
-          <ExplorerButton explorer={explorer} />
-        </div>
-      }
+      <div className="my-4">
+        <ExplorerButton />
+      </div>
 
       <h2 className="text-xl my-4">Mint Progress</h2>
       <MintProgress collection={collection} />
