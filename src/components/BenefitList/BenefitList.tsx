@@ -1,14 +1,19 @@
+import { ElementType } from 'react';
 import { benefits } from '../../data/benefits';
+import { PolymorphicComponentProp } from '../../typings/polymorphic';
+import { BenefitListItem } from './BenefitListItem';
 
-export const BenefitList = () => {
+export type BenefitListProps = {};
+
+export const BenefitList = <C extends ElementType = "ul">({ as, ...rest }: PolymorphicComponentProp<C, BenefitListProps>) => {
+  const Component = as || "ul";
+  const itemAs = Component === "ul" || Component === "ol" ? "li" : "div";
+
   return (
-    <ul className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-green-500 text-white">
+    <Component className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-green-500 text-white" {...rest}>
       {benefits.map((item, i) => (
-        <li key={i} className="p-4 pb-6">
-          <p className='font-semibold text-lg mb-2'>{item.title}</p>
-          <p className="text-green-100">{item.description}</p>
-        </li>
+        <BenefitListItem key={i} as={itemAs} title={item.title} description={item.description} />
       ))}
-    </ul>
+    </Component>
   );
 };

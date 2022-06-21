@@ -1,7 +1,7 @@
 import { ChangeEvent, KeyboardEvent, FormEvent } from "react";
 import { ZERO_ADDRESS } from "../../constants";
 
-export interface PureContractSearchProps {
+export interface IPureContractSearchProps {
   contractAddress: string;
   onSubmit?: (e: FormEvent<HTMLFormElement>) => void;
   onClick?: () => void;
@@ -9,7 +9,7 @@ export interface PureContractSearchProps {
   onKeyPress?: (e: KeyboardEvent<HTMLInputElement>) => void;
 }
 
-export const PureContractSearch = ({ contractAddress, onSubmit, onClick, onChangeInput, onKeyPress }: PureContractSearchProps) => {
+export const PureContractSearch = ({ contractAddress, onSubmit, onClick, onChangeInput, onKeyPress }: IPureContractSearchProps) => {
   return (
     <div className="text-center max-w-xl mx-auto py-16 sm:py-24">
       <h2 className="text-2xl md:text-3xl font-extrabold text-white sm:text-4xl">

@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import useSWR from "swr";
 import { ICollection, IItem } from "../../typings/types";
 import CollectionDetails from "../../components/CollectionDetails";
-import EmptyCard from "../../components/EmptyCard";
-import ItemGrid from "../../components/ItemGrid";
 import { items } from "../../data/items";
-import ResetButton from "../../components/ResetButton";
+import ItemGrid, { EmptyGrid } from "../../components/ItemGrid";
 import useContractAddress from '../../hooks/useContractAddress';
 import useExplorer from "../../hooks/useExplorer";
-import ExplorerButton from "../../components/ExplorerButton";
+import { Button } from "../../base/Button/Button";
+import { Layout, LayoutLeft, LayoutRight } from "../../base/Layout";
 
 const fetcher = (url: string) => fetch(url).then(resp => resp.json());
 
@@ -16,7 +15,7 @@ export const SearchResults = () => {
   const { data } = useSWR("https://dog.ceo/api/breeds/image/random", fetcher, { suspense: true });
   const [collection, setCollection] = useState<ICollection | undefined>();
   const { contractAddress, resetContractAddress } = useContractAddress();
-  const { explorer, resetExplorer, setExplorer } = useExplorer();
+  const { addressExplorer, resetExplorer } = useExplorer();
   const [loading, setLoading] = useState<boolean>(false);
   const [directory, setDirectory] = useState<string>('');
   const [recent, setRecent] = useState<Array<IItem>>([]);
@@ -108,27 +107,28 @@ export const SearchResults = () => {
     return () => controller?.abort();
   }, [collection]);
 
-
   return (
-    <div className='md:flex gap-4'>
-      <div className='md:w-1/3 p-4 max-h-screen md:sticky top-0'>
-        <ResetButton onReset={onReset} />
-        <ExplorerButton />
+    <Layout>
+      <LayoutLeft>
+        <div className="space-x-2">
+          <Button onClick={onReset}>Reset</Button>
+          <Button as="a" href={addressExplorer} target="_blank" rel="noreferrer">
+            View on Explorer
+          </Button>
+        </div>
 
         {collection && (
-          <CollectionDetails collection={collection} />
+          <CollectionDetails collection={collection} explorerUrl={addressExplorer} />
         )}
-      </div>
+      </LayoutLeft>
 
-      <div className="md:w-2/3 p-4 bg-gray-200 min-h-screen">
+      <LayoutRight>
         {collection ? (
           <ItemGrid contractAddress={contractAddress} recent={recent} upcoming={upcoming} directory={directory} />
         ) : (
-          <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
-            {[...Array(15)].map((x, i) => <EmptyCard key={i} />)}
-          </div>
+          <EmptyGrid count={15} />
         )}
-      </div>
-    </div>
+      </LayoutRight>
+    </Layout>
   );
 };

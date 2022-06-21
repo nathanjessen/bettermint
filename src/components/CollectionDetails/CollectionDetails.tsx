@@ -1,12 +1,13 @@
 import { ICollection } from '../../typings/types';
-import ExplorerButton from '../ExplorerButton';
+import Button from '../../base/Button';
 import MintProgress from '../MintProgress';
 
-export interface CollectionDetailsProps {
+export interface ICollectionDetailsProps {
   collection: ICollection;
+  explorerUrl: string;
 }
 
-export const CollectionDetails = ({ collection }: CollectionDetailsProps) => {
+export const CollectionDetails = ({ collection, explorerUrl }: ICollectionDetailsProps) => {
   return (
     <div>
       <h1 className='text-3xl'>{collection.name}</h1>
@@ -15,7 +16,9 @@ export const CollectionDetails = ({ collection }: CollectionDetailsProps) => {
       </h2>
 
       <div className="my-4">
-        <ExplorerButton />
+        <Button as="a" href={explorerUrl} target="_blank" rel="noreferrer">
+          View on Explorer
+        </Button>
       </div>
 
       <h2 className="text-xl my-4">Mint Progress</h2>

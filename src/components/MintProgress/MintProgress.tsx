@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { ICollection } from "../../typings/types";
+import ProgressBar from '../../base/ProgressBar/index';
 
-export interface PureMintProgressProps {
+export interface IPureMintProgressProps {
   collection: ICollection;
 }
 
-export const PureMintProgress = ({ collection }: PureMintProgressProps) => {
+export const PureMintProgress = ({ collection }: IPureMintProgressProps) => {
   const [progress, setProgress] = useState<number>(0);
 
   useEffect(() => {
@@ -21,9 +22,8 @@ export const PureMintProgress = ({ collection }: PureMintProgressProps) => {
 
   return (
     <div aria-hidden="true">
-      <div className="bg-gray-200 rounded-full overflow-hidden">
-        <div className="h-2 bg-indigo-600 rounded-full" style={{ width: progress + '%' }} />
-      </div>
+      <ProgressBar progress={progress} />
+
       <div className="hidden sm:grid grid-cols-3 text-sm font-medium text-gray-600 mt-4">
         <div className="text-left">0</div>
         <div className="text-center text-xl text-indigo-600">{collection.current}</div>

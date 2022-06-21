@@ -1,8 +1,2 @@
-import { tiers } from '../../data/tiers';
-import { PurePriceTiers } from './PriceTiers';
-
-const PriceTiers = () => {
-  return <PurePriceTiers tiers={tiers} />;
-};
-
+import { PriceTiers } from './PriceTiers';
 export default PriceTiers;

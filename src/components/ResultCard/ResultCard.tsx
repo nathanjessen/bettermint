@@ -1,6 +1,6 @@
 import { IItem } from "../../typings/types";
 
-export interface ResultCardProps {
+export interface IResultCardProps {
   directory?: string;
   item: IItem;
 }
@@ -8,7 +8,7 @@ export interface ResultCardProps {
 export const ResultCard = ({
   directory,
   item: { mint, data },
-}: ResultCardProps) => {
+}: IResultCardProps) => {
   return (
     <div className='flex flex-col rounded-md shadow overflow-hidden'>
       <div className='flex-shrink-0 bg-blue-200'>

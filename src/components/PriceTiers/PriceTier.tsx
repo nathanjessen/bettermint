@@ -1,12 +1,12 @@
 import { ITier } from "../../typings/types";
 
-export interface PriceTierProps {
+export interface IPriceTierProps {
   tier: ITier;
 }
 
-export const PriceTier = ({ tier }: PriceTierProps) => {
+export const PriceTier = ({ tier }: IPriceTierProps) => {
   return (
-    <div key={tier.name} className="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+    <div className="border border-gray-200 rounded-lg shadow-sm">
       <div className="p-6">
         <h2 className="mb-4 text-lg leading-6 font-medium text-gray-900">{tier.name}</h2>
         <p className="mb-8 text-sm text-gray-500">{tier.description}</p>

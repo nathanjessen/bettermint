@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import Loader from './components/Loader';
+import Loader from './base/Loader';
 import SearchResults from "./pages/SearchResults";
 import LandingPage from "./pages/LandingPage";
 
