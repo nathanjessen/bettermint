@@ -1,15 +1,63 @@
 import { ElementType } from 'react';
+import clsx from "clsx";
 import { PolymorphicComponentProp } from '../../typings/polymorphic';
 
-type ButtonProps = {};
+export type ButtonProps = {
+  active?: boolean;
+  disabled?: boolean;
+  loading?: boolean;
+  animation?: "no-animation" | string;
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  color?: "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "error";
+  variant?: "ghost" | "link" | "outline" | "glass";
+  shape?: "wide" | "block" | "circle" | "square";
+};
 
-export const Button = <C extends ElementType = "button">({ as, children, ...rest }: PolymorphicComponentProp<C, ButtonProps>) => {
+export const Button = <C extends ElementType = "button">({ as, active, disabled: _disabled, loading, animation, size = "md", color, variant, shape, children, ...rest }: PolymorphicComponentProp<C, ButtonProps>) => {
   const Component = as || "button";
+
+  const activeCls = active ? 'btn-active' : '';
+  const loadingCls = loading ? 'loading' : '';
+  const disabled = _disabled || loading;
+  const disabledCls = disabled ? 'btn-disabled' : '';
+
+  const sizes: { [key: string]: string; } = {
+    xs: "btn-xs",
+    sm: "btn-sm",
+    md: "btn-md",
+    lg: "btn-lg",
+  };
+
+  const colors: { [key: string]: string; } = {
+    primary: 'btn-primary',
+    secondary: 'btn-secondary',
+    accent: 'btn-accent',
+    info: 'btn-info',
+    success: 'btn-success',
+    warning: 'btn-warning',
+    error: 'btn-error',
+  };
+
+  const variants: { [key: string]: string; } = {
+    ghost: 'btn-ghost',
+    link: 'btn-link',
+    outline: 'btn-outline',
+    glass: 'glass',
+  };
+
+  const shapes: { [key: string]: string; } = {
+    wide: 'btn-wide',
+    block: 'btn-block',
+    circle: 'btn-circle',
+    square: 'btn-square',
+  };
 
   return (
     <Component
-      className="relative inline-flex items-center px-4 py-2 rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500"
-      {...rest}>
+      className={clsx('btn', sizes[size], color && colors[color], variant && variants[variant], shape && shapes[shape], activeCls, loadingCls, disabledCls, animation)}
+      disabled={disabled}
+      {...rest}
+    >
       {children}
     </Component>
   );

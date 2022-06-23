@@ -16,7 +16,7 @@ export const CollectionDetails = ({ collection, explorerUrl }: ICollectionDetail
       </h2>
 
       <div className="my-4">
-        <Button as="a" href={explorerUrl} target="_blank" rel="noreferrer">
+        <Button color="primary" as="a" href={explorerUrl} target="_blank" rel="noreferrer">
           View on Explorer
         </Button>
       </div>

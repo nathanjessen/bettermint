@@ -111,8 +111,9 @@ export const SearchResults = () => {
     <Layout>
       <LayoutLeft>
         <div className="space-x-2">
-          <Button onClick={onReset}>Reset</Button>
-          <Button as="a" href={addressExplorer} target="_blank" rel="noreferrer">
+          <Button color="primary" variant="outline" onClick={onReset}>Reset</Button>
+
+          <Button color="primary" as="a" href={addressExplorer} target="_blank" rel="noreferrer">
             View on Explorer
           </Button>
         </div>

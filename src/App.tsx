@@ -5,7 +5,7 @@ import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App" data-theme="forest">
       <Suspense fallback={<Loader />}>
         <LandingPage />
         <SearchResults />
