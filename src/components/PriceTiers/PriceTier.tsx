@@ -7,7 +7,7 @@ export interface IPriceTierProps {
 
 export const PriceTier = ({ tier }: IPriceTierProps) => {
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <div className="card bg-white shadow-xl">
       <div className="card-body">
         <h2 className="card-title">{tier.name}</h2>
         <p className="flex-grow">{tier.description}</p>

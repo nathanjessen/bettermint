@@ -1,4 +1,5 @@
 import { ChangeEvent, KeyboardEvent, FormEvent } from "react";
+import Button from "../../base/Button";
 import { ZERO_ADDRESS } from "../../constants";
 
 export interface IPureContractSearchProps {
@@ -17,11 +18,11 @@ export const PureContractSearch = ({ contractAddress, onSubmit, onClick, onChang
       </h2>
 
       <form onSubmit={onSubmit}>
-        <label htmlFor="contractAddress" className="text-xl text-green-100 mt-2 md:mt-3 mb-6 block">
+        <label htmlFor="contractAddress" className="text-xl text-primary-100 mt-2 md:mt-3 mb-6 block">
           search by name or contract address
         </label>
 
-        <div className="flex">
+        <div className="flex space-x-3">
           <input
             type="text"
             name="contractAddress"
@@ -30,14 +31,11 @@ export const PureContractSearch = ({ contractAddress, onSubmit, onClick, onChang
             placeholder={ZERO_ADDRESS}
             onChange={onChangeInput}
             onKeyPress={onKeyPress}
-            className="block rounded-md flex-grow shadow-sm mr-3 z-10 border-2 border-green-700 focus:border-green-800 focus:ring-2 focus:ring-white text-sm md:text-base"
+            className="input input-bordered bg-white w-full input-lg z-10"
           />
-          <button
-            type="button"
-            onClick={onClick}
-            className="py-3 px-6 md:px-8 md:py-4 rounded-md font-medium text-green-100 bg-green-800 border border-green-700 focus:border-green-800 hover:bg-green-900 focus:z-10 focus:outline-none focus:ring-2 focus:ring-white">
+          <Button color="secondary" size="lg" onClick={onClick}>
             Search
-          </button>
+          </Button>
         </div>
       </form>
     </div>

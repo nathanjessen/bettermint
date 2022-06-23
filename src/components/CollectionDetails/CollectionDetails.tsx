@@ -10,8 +10,8 @@ export interface ICollectionDetailsProps {
 export const CollectionDetails = ({ collection, explorerUrl }: ICollectionDetailsProps) => {
   return (
     <div>
-      <h1 className='text-3xl'>{collection.name}</h1>
-      <h2 className='text-base text-gray-700 font-semibold mb-3'>
+      <h1 className="text-3xl">{collection.name}</h1>
+      <h2 className="text-base text-gray-700 font-semibold mb-3">
         {collection.symbol}
       </h2>
 

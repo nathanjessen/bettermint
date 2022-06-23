@@ -11,8 +11,8 @@ export const BenefitListItem = <C extends ElementType = "li">({ as, title, descr
 
   return (
     <Component className="p-4 pb-6" {...rest}>
-      <p className='font-semibold text-lg mb-2'>{title}</p>
-      <p className="text-green-100">{description}</p>
+      <p className="text-white font-semibold text-lg mb-2">{title}</p>
+      <p className="text-primary-content">{description}</p>
     </Component>
   );
 };

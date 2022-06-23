@@ -11,9 +11,10 @@ export type ButtonProps = {
   color?: "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "error";
   variant?: "ghost" | "link" | "outline" | "glass";
   shape?: "wide" | "block" | "circle" | "square";
+  util?: string;
 };
 
-export const Button = <C extends ElementType = "button">({ as, active, disabled: _disabled, loading, animation, size = "md", color, variant, shape, children, ...rest }: PolymorphicComponentProp<C, ButtonProps>) => {
+export const Button = <C extends ElementType = "button">({ as, active, disabled: _disabled, loading, animation, size = "md", color, variant, shape, children, util, ...rest }: PolymorphicComponentProp<C, ButtonProps>) => {
   const Component = as || "button";
 
   const activeCls = active ? 'btn-active' : '';
@@ -54,7 +55,7 @@ export const Button = <C extends ElementType = "button">({ as, active, disabled:
 
   return (
     <Component
-      className={clsx('btn', sizes[size], color && colors[color], variant && variants[variant], shape && shapes[shape], activeCls, loadingCls, disabledCls, animation)}
+      className={clsx('btn', sizes[size], color && colors[color], variant && variants[variant], shape && shapes[shape], activeCls, loadingCls, disabledCls, animation, util)}
       disabled={disabled}
       {...rest}
     >
