@@ -1,12 +1,12 @@
 import { ElementType } from "react";
 import { PolymorphicComponentProp } from "../../typings/polymorphic";
 
-type ItemProps = {
+export type BenefitListItemProps = {
   title?: string;
   description?: string;
 };
 
-export const BenefitListItem = <C extends ElementType = "li">({ as, title, description, ...rest }: PolymorphicComponentProp<C, ItemProps>) => {
+export const BenefitListItem = <C extends ElementType = "li">({ as, title, description, ...rest }: PolymorphicComponentProp<C, BenefitListItemProps>) => {
   const Component = as || "li";
 
   return (
