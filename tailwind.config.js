@@ -4,7 +4,6 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     extend: {
@@ -22,8 +21,6 @@ module.exports = {
   ],
   daisyui: {
     themes: [
-      "forest",
-      "business",
       {
         bettermint: {
           ...require("daisyui/src/colors/themes")["[data-theme=forest]"],
@@ -37,6 +34,35 @@ module.exports = {
           "--tab-radius": "0.25rem", // border radius of tabs
         },
       },
+      "dark",
+      "light",
+      "cupcake",
+      "bumblebee",
+      "emerald",
+      "corporate",
+      "synthwave",
+      "retro",
+      "cyberpunk",
+      "valentine",
+      "halloween",
+      "garden",
+      "forest",
+      "aqua",
+      "lofi",
+      "pastel",
+      "fantasy",
+      "wireframe",
+      "black",
+      "luxury",
+      "dracula",
+      "cmyk",
+      "autumn",
+      "business",
+      "acid",
+      "lemonade",
+      "night",
+      "coffee",
+      "winter",
     ],
   },
 };

@@ -1,4 +1,10 @@
+import Button from '../../base/Button';
+import { themes } from '../../constants/themes';
+import { useTheme } from '../../state/ThemeContext';
+
 export const Header = () => {
+  const { theme, setTheme } = useTheme();
+
   return (
     <div className="flex justify-between items-center">
       <div className="flex items-center space-x-2">
@@ -6,6 +12,16 @@ export const Header = () => {
         <h1 className="text-2xl md:text-3xl text-white lowercase flex items-center">
           Better<span className="font-semibold">mint</span>
         </h1>
+      </div>
+      <div className="dropdown dropdown-end">
+        <label tabIndex={0} className="btn btn-ghost rounded-btn">Theme</label>
+        <ul tabIndex={0} className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+          {themes.sort().map(item => (
+            <li key={item}>
+              <Button variant='ghost' active={item === theme} onClick={() => setTheme(item)}>{item}</Button>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
