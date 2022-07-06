@@ -20,11 +20,11 @@ export const globalTypes = {
   //   defaultValue: "light",
   //   toolbar: {
   //     icon: "mirror",
-  //     items: themes.sort(),
+  //     items: themes,
   //     showName: true,
   //   },
   // },
   themes: {
-    defaultValue: themes.sort(),
+    defaultValue: themes,
   },
 };

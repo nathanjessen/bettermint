@@ -16,7 +16,7 @@ export const Header = () => {
       <div className="dropdown dropdown-end">
         <label tabIndex={0} className="btn btn-ghost rounded-btn">Theme</label>
         <ul tabIndex={0} className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-          {themes.sort().map(item => (
+          {themes.map(item => (
             <li key={item}>
               <Button variant='ghost' active={item === theme} onClick={() => setTheme(item)}>{item}</Button>
             </li>

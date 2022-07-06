@@ -19,18 +19,12 @@ export const ThemeContext = createContext<ThemeContextType>(initialState);
 export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = (props: PropsWithChildren) => {
-  const [theme, setTheme] = useState<string>(defaultTheme);
+  const [theme, setTheme] = useState<string>(localStorage.theme || defaultTheme);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
-
-  useEffect(() => {
-    if (localStorage.theme) {
-      setTheme(localStorage.theme);
-    }
-  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, themes, setTheme }}>
