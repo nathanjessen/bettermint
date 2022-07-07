@@ -4,10 +4,10 @@ import MintProgress from '../MintProgress';
 
 export interface ICollectionDetailsProps {
   collection: ICollection;
-  explorerUrl: string;
+  explorerUrl?: string;
 }
 
-export const CollectionDetails = ({ collection, explorerUrl }: ICollectionDetailsProps) => {
+export const CollectionDetails = ({ collection, explorerUrl = '' }: ICollectionDetailsProps) => {
   return (
     <div>
       <h1 className="text-3xl">{collection.name}</h1>

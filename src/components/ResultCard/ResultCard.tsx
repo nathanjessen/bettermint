@@ -9,8 +9,10 @@ export const ResultCard = ({
   directory,
   item: { mint, data },
 }: IResultCardProps) => {
+  const metadataUrl = directory ? `${directory}/${mint}.json` : `${mint}.json`;
+
   return (
-    <div className='flex flex-col rounded-md shadow overflow-hidden'>
+    <div className='flex flex-col rounded-md shadow overflow-hidden max-w-xl'>
       <div className='flex-shrink-0 bg-blue-200'>
         <a href={data.image} target='_blank' rel='noreferrer'>
           <img
@@ -26,7 +28,7 @@ export const ResultCard = ({
           <p className='text-sm font-semibold text-gray-900 dark:text-gray-100'>
             <a
               className='text-blue-600 hover:text-blue-900'
-              href={`${directory}/${mint}.json`}
+              href={metadataUrl}
               target='_blank'
               rel='noreferrer'>
               {mint}

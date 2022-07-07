@@ -2,4 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer components {} */
+@layer components {
+  progress[value]::-webkit-progress-value {
+    transition: width 0.5s;
+  }
+}

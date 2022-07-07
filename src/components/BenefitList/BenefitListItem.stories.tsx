@@ -1,17 +1,12 @@
 import { Story, Meta } from '@storybook/react';
 
+import { unorderedList } from '../../../.storybook/decorators';
 import { BenefitListItem, BenefitListItemProps } from './BenefitListItem';
 
 export default {
   title: "Components/BenefitListItem",
   component: BenefitListItem,
-  decorators: [
-    (Story) => (
-      <ul>
-        <Story />
-      </ul>
-    )
-  ]
+  decorators: [unorderedList]
 } as Meta;
 
 const Template: Story<BenefitListItemProps> = (args) => <BenefitListItem {...args} />;

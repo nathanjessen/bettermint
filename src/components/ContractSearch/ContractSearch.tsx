@@ -18,7 +18,7 @@ export const PureContractSearch = ({ contractAddress, onSubmit, onClick, onChang
       </h2>
 
       <form onSubmit={onSubmit}>
-        <label htmlFor="contractAddress" className="text-xl text-primary-100 mt-2 md:mt-3 mb-6 block">
+        <label htmlFor="contractAddress" className="text-xl text-primary-content mt-2 md:mt-3 mb-6 block">
           search by name or contract address
         </label>
 

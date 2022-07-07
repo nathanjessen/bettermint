@@ -1,9 +1,8 @@
 import Button from '../../base/Button';
-import { themes } from '../../constants/themes';
 import { useTheme } from '../../state/ThemeContext';
 
 export const Header = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, themes, setTheme } = useTheme();
 
   return (
     <div className="flex justify-between items-center">

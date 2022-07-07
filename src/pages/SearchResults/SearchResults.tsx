@@ -8,11 +8,12 @@ import useContractAddress from '../../hooks/useContractAddress';
 import useExplorer from "../../hooks/useExplorer";
 import { Button } from "../../base/Button/Button";
 import { Layout, LayoutLeft, LayoutRight } from "../../base/Layout";
+import { collections } from "../../data/collections";
 
 const fetcher = (url: string) => fetch(url).then(resp => resp.json());
 
 export const SearchResults = () => {
-  const { data } = useSWR("https://dog.ceo/api/breeds/image/random", fetcher, { suspense: true });
+  // const { data } = useSWR("https://dog.ceo/api/breeds/image/random", fetcher, { suspense: true });
   const [collection, setCollection] = useState<ICollection | undefined>();
   const { contractAddress, resetContractAddress } = useContractAddress();
   const { addressExplorer, resetExplorer } = useExplorer();
@@ -35,14 +36,7 @@ export const SearchResults = () => {
     // current updates after every new block
     // tokenURI returns url to json
     if (contractAddress) {
-      setCollection({
-        name: "Binary Punks",
-        symbol: "PUNKS",
-        totalSupply: 9999,
-        directory:
-          "https://ipfs.io/ipfs/QmSZqMMGcAosPVKRVTo6Jydo5ZwkXMDSvWmsKiJuWzXAQX",
-        current: 426,
-      });
+      setCollection(collections[0]);
     }
 
     // https://api.ftmscan.com/api?module=contract&action=getabi&address=${BINARY_PUNKS_FANTOM_ADDRESS}
