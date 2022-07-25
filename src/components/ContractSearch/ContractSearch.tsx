@@ -12,13 +12,13 @@ export interface IPureContractSearchProps {
 
 export const PureContractSearch = ({ contractAddress, onSubmit, onClick, onChangeInput, onKeyPress }: IPureContractSearchProps) => {
   return (
-    <div className="text-center max-w-xl mx-auto py-16 sm:py-24">
-      <h2 className="text-2xl md:text-3xl font-extrabold text-white sm:text-4xl">
+    <div className="text-center max-w-xl w-full py-16 sm:py-24 self-center">
+      <h2 className="text-3xl md:text-5xl font-extrabold text-primary-content sm:text-4xl">
         NFT Collection
       </h2>
 
       <form onSubmit={onSubmit}>
-        <label htmlFor="contractAddress" className="text-xl text-primary-content mt-2 md:mt-3 mb-6 block">
+        <label htmlFor="contractAddress" className="text-2xl text-primary-content mt-2 md:mt-3 mb-6 block">
           search by name or contract address
         </label>
 
@@ -31,7 +31,7 @@ export const PureContractSearch = ({ contractAddress, onSubmit, onClick, onChang
             placeholder={ZERO_ADDRESS}
             onChange={onChangeInput}
             onKeyPress={onKeyPress}
-            className="input input-bordered bg-white w-full input-lg z-10"
+            className="input input-bordered w-full input-lg z-10"
           />
           <Button color="secondary" size="lg" onClick={onClick}>
             Search

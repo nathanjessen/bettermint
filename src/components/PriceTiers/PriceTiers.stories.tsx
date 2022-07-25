@@ -5,14 +5,12 @@ import { PriceTiers, IPriceTiersProps } from './PriceTiers';
 export default {
   title: "Components/PriceTiers",
   component: PriceTiers,
+  args: {
+    tiers
+  }
 } as Meta;
 
 const Template: Story<IPriceTiersProps> = (args) => <PriceTiers {...args} />;
 
-export const Empty = Template.bind({});
-Empty.args = {};
-
-export const HasTiers = Template.bind({});
-HasTiers.args = {
-  tiers: tiers,
-};
+export const Default = Template.bind({});
+Default.args = {};

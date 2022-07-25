@@ -25,11 +25,15 @@ export default function useExplorer(initialValue?: string): ReturnType {
 
   useEffect(() => {
     // const data = address;
-    // getExplorerLink(chainId, data, "transaction")
-    // getExplorerLink(chainId, data, "token")
-    let url = getExplorerLink(chainId, ZERO_ADDRESS, "address");
-    setAddressExplorer(url);
-    // getExplorerLink(chainId, data, "block")
+    const data = ZERO_ADDRESS;
+    let txUrl = getExplorerLink(chainId, data, "transaction");
+    let tokenUrl = getExplorerLink(chainId, data, "token");
+    let addressUrl = getExplorerLink(chainId, data, "address");
+    let blockUrl = getExplorerLink(chainId, data, "block");
+    setTxExplorer(txUrl);
+    setTokenExplorer(tokenUrl);
+    setAddressExplorer(addressUrl);
+    setBlockExplorer(blockUrl);
   }, []);
 
   return {

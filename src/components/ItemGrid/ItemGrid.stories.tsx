@@ -18,12 +18,7 @@ Default.args = {};
 
 export const RecentItems = Template.bind({});
 RecentItems.args = {
-  recent: items.slice(0, 5),
-};
-
-export const UpcomingItems = Template.bind({});
-UpcomingItems.args = {
-  upcoming: items.slice(0, 5),
+  items: items.slice(0, 5),
 };
 
 export const Directory = Template.bind({});

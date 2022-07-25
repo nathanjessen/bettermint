@@ -1,21 +1,25 @@
 import { useEffect, useState } from "react";
-import useSWR from "swr";
+import { useMatch } from 'react-location';
+// import useSWR from "swr";
 import { ICollection, IItem } from "../../typings/types";
 import CollectionDetails from "../../components/CollectionDetails";
-import { items } from "../../data/items";
 import ItemGrid, { EmptyGrid } from "../../components/ItemGrid";
 import useContractAddress from '../../hooks/useContractAddress';
 import useExplorer from "../../hooks/useExplorer";
 import { Button } from "../../base/Button/Button";
 import { Layout, LayoutLeft, LayoutRight } from "../../base/Layout";
 import { collections } from "../../data/collections";
+import Header from "../../components/Header";
+import { LocationGenerics } from "../../router/routes";
+import { ZERO_ADDRESS } from "../../constants";
 
-const fetcher = (url: string) => fetch(url).then(resp => resp.json());
+// const fetcher = (url: string) => fetch(url).then(resp => resp.json());
 
 export const SearchResults = () => {
+  const { items } = useMatch<LocationGenerics>().data;
   // const { data } = useSWR("https://dog.ceo/api/breeds/image/random", fetcher, { suspense: true });
   const [collection, setCollection] = useState<ICollection | undefined>();
-  const { contractAddress, resetContractAddress } = useContractAddress();
+  const { contractAddress, resetContractAddress } = useContractAddress(ZERO_ADDRESS);
   const { addressExplorer, resetExplorer } = useExplorer();
   const [loading, setLoading] = useState<boolean>(false);
   const [directory, setDirectory] = useState<string>('');
@@ -90,10 +94,12 @@ export const SearchResults = () => {
         console.log('Failed to fetch');
       }
 
-      // setRecent(prevItems);
-      setRecent(items.slice(0, 5));
-      // setUpcoming(tempItems);
-      setUpcoming(items.slice(5, items.length));
+      if (items) {
+        // setRecent(prevItems);
+        setRecent(items.slice(0, 5));
+        // setUpcoming(tempItems);
+        setUpcoming(items.slice(5, items.length));
+      }
     };
 
     getItems().then(() => setLoading(false));
@@ -101,29 +107,41 @@ export const SearchResults = () => {
     return () => controller?.abort();
   }, [collection]);
 
+  if (loading) {
+    return null;
+  }
+
   return (
-    <Layout>
-      <LayoutLeft>
-        <div className="space-x-2">
-          <Button color="primary" variant="outline" onClick={onReset}>Reset</Button>
+    <div>
+      <Header />
 
-          <Button color="primary" as="a" href={addressExplorer} target="_blank" rel="noreferrer">
-            View on Explorer
-          </Button>
-        </div>
+      <Layout>
+        <LayoutLeft>
+          <div className="space-x-2">
+            <Button color="primary" variant="outline" onClick={onReset}>Reset</Button>
 
-        {collection && (
-          <CollectionDetails collection={collection} explorerUrl={addressExplorer} />
-        )}
-      </LayoutLeft>
+            <Button color="primary" as="a" href={addressExplorer} target="_blank" rel="noreferrer">
+              View on Explorer
+            </Button>
+          </div>
 
-      <LayoutRight>
-        {collection ? (
-          <ItemGrid contractAddress={contractAddress} recent={recent} upcoming={upcoming} directory={directory} />
-        ) : (
-          <EmptyGrid count={15} />
-        )}
-      </LayoutRight>
-    </Layout>
+          {collection && (
+            <CollectionDetails collection={collection} explorerUrl={addressExplorer} />
+          )}
+        </LayoutLeft>
+
+        <LayoutRight>
+          {collection ? (
+            <>
+              <ItemGrid contractAddress={contractAddress} items={recent} directory={directory} />
+              <div className="divider"></div>
+              <ItemGrid contractAddress={contractAddress} items={upcoming} directory={directory} />
+            </>
+          ) : (
+            <EmptyGrid count={15} />
+          )}
+        </LayoutRight>
+      </Layout>
+    </div>
   );
 };

@@ -1,19 +1,15 @@
-import { Suspense } from "react";
-import Loader from './base/Loader';
-import SearchResults from "./pages/SearchResults";
-import LandingPage from "./pages/LandingPage";
-import { ThemeProvider } from "./state/ThemeContext";
+import { ReactLocation, Router, Outlet } from 'react-location';
+import { LocationGenerics, routes } from "./router/routes";
+
+const reactLocation = new ReactLocation<LocationGenerics>();
 
 function App() {
   return (
-    <ThemeProvider>
-      <div className="App">
-        <Suspense fallback={<Loader />}>
-          <LandingPage />
-          <SearchResults />
-        </Suspense>
-      </div>
-    </ThemeProvider>
+    <div className="App">
+      <Router location={reactLocation} routes={routes}>
+        <Outlet />
+      </Router>
+    </div>
   );
 }
 
