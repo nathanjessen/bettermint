@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
-import { ZERO_ADDRESS } from '../../constants';
-import { items } from '../../data/items';
+import { ZERO_ADDRESS } from 'constants/index';
+import { items } from 'data/items';
 import { IItemGridProps, ItemGrid } from './ItemGrid';
 
 export default {

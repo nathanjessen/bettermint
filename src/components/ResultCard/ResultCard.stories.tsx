@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { items } from '../../data/items';
+import { items } from 'data/items';
 
 import { IResultCardProps, ResultCard } from './ResultCard';
 

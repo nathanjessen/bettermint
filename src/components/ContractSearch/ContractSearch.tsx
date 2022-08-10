@@ -1,6 +1,6 @@
+import Button from 'base/Button';
+import { ZERO_ADDRESS } from 'constants/index';
 import { ChangeEvent, FormEvent, KeyboardEvent } from 'react';
-import Button from '../../base/Button';
-import { ZERO_ADDRESS } from '../../constants';
 
 export interface IPureContractSearchProps {
   contractAddress: string;

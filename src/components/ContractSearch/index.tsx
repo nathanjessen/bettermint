@@ -1,5 +1,5 @@
+import useContractAddress from 'hooks/useContractAddress';
 import { ChangeEvent, FormEvent, KeyboardEvent } from 'react';
-import useContractAddress from '../../hooks/useContractAddress';
 import { PureContractSearch } from './ContractSearch';
 
 const ContractSearch = () => {

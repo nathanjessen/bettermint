@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { ZERO_ADDRESS } from '../../constants';
+import { ZERO_ADDRESS } from 'constants/index';
 
 import { IPureContractSearchProps, PureContractSearch } from './ContractSearch';
 

@@ -1,6 +1,6 @@
+import { benefits } from 'data/benefits';
 import { ElementType } from 'react';
-import { benefits } from '../../data/benefits';
-import { PolymorphicComponentProp } from '../../typings/polymorphic';
+import { PolymorphicComponentProp } from 'typings/polymorphic';
 import { BenefitListItem } from './BenefitListItem';
 
 export type BenefitListProps = {};

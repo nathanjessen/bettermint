@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useMatch } from 'react-location';
 // import useSWR from "swr";
-import { Button } from '../../base/Button/Button';
-import { Layout, LayoutLeft, LayoutRight } from '../../base/Layout';
-import CollectionDetails from '../../components/CollectionDetails';
-import Header from '../../components/Header';
-import ItemGrid, { EmptyGrid } from '../../components/ItemGrid';
-import { ZERO_ADDRESS } from '../../constants';
-import { collections } from '../../data/collections';
-import useContractAddress from '../../hooks/useContractAddress';
-import useExplorer from '../../hooks/useExplorer';
-import { LocationGenerics } from '../../router/routes';
-import { ICollection, IItem } from '../../typings/types';
+import { Button } from 'base/Button/Button';
+import { Layout, LayoutLeft, LayoutRight } from 'base/Layout';
+import CollectionDetails from 'components/CollectionDetails';
+import Header from 'components/Header';
+import ItemGrid, { EmptyGrid } from 'components/ItemGrid';
+import { ZERO_ADDRESS } from 'constants/index';
+import { collections } from 'data/collections';
+import useContractAddress from 'hooks/useContractAddress';
+import useExplorer from 'hooks/useExplorer';
+import { LocationGenerics } from 'router/routes';
+import { ICollection, IItem } from 'typings/types';
 
 // const fetcher = (url: string) => fetch(url).then(resp => resp.json());
 

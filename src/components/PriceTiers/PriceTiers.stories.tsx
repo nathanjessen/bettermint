@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { tiers } from '../../data/tiers';
+import { tiers } from 'data/tiers';
 import { IPriceTiersProps, PriceTiers } from './PriceTiers';
 
 export default {

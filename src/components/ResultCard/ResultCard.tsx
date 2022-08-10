@@ -1,4 +1,4 @@
-import { IItem } from '../../typings/types';
+import { IItem } from 'typings/types';
 
 export interface IResultCardProps {
   directory?: string;

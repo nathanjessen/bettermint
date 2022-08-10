@@ -1,5 +1,5 @@
-import Header from '../../components/Header';
-import SearchHero from '../../components/SearchHero';
+import Header from 'components/Header';
+import SearchHero from 'components/SearchHero';
 
 export const LandingPage = () => {
   return (

@@ -1,5 +1,5 @@
-import Button from '../../base/Button';
-import { ITier } from '../../typings/types';
+import Button from 'base/Button';
+import { ITier } from 'typings/types';
 
 export interface IPriceTierProps {
   tier: ITier;

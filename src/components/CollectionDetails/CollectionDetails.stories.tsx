@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 
-import { collections } from '../../data/collections';
+import { collections } from 'data/collections';
 import {
   CollectionDetails,
   ICollectionDetailsProps,

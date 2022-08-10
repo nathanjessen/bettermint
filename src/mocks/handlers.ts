@@ -1,7 +1,7 @@
+import { items } from 'data/items';
+import { tiers } from 'data/tiers';
 import { rest } from 'msw';
 import { API_PRICING, API_RESULTS } from '../constants/api';
-import { items } from '../data/items';
-import { tiers } from '../data/tiers';
 
 const pricingHandler = rest.get(API_PRICING, (req, res, ctx) => {
   return res(ctx.delay(500), ctx.status(200), ctx.json(items));

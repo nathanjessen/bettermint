@@ -1,6 +1,6 @@
+import ProgressBar from 'base/ProgressBar/index';
 import { useEffect, useState } from 'react';
-import ProgressBar from '../../base/ProgressBar/index';
-import { ICollection } from '../../typings/types';
+import { ICollection } from 'typings/types';
 
 export interface IPureMintProgressProps {
   collection: ICollection;
