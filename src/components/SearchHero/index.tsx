@@ -1,2 +1,2 @@
-import { SearchHero } from "./SearchHero";
+import { SearchHero } from './SearchHero';
 export default SearchHero;

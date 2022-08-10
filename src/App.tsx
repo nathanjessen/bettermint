@@ -1,11 +1,11 @@
-import { ReactLocation, Router, Outlet } from 'react-location';
-import { LocationGenerics, routes } from "./router/routes";
+import { Outlet, ReactLocation, Router } from 'react-location';
+import { LocationGenerics, routes } from './router/routes';
 
 const reactLocation = new ReactLocation<LocationGenerics>();
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Router location={reactLocation} routes={routes}>
         <Outlet />
       </Router>

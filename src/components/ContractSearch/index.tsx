@@ -1,7 +1,6 @@
-import { ChangeEvent, KeyboardEvent, FormEvent } from "react";
-import useContractAddress from "../../hooks/useContractAddress";
-import { PureContractSearch } from "./ContractSearch";
-
+import { ChangeEvent, FormEvent, KeyboardEvent } from 'react';
+import useContractAddress from '../../hooks/useContractAddress';
+import { PureContractSearch } from './ContractSearch';
 
 const ContractSearch = () => {
   const { contractAddress, setContractAddress } = useContractAddress();
@@ -9,7 +8,8 @@ const ContractSearch = () => {
   const onSearch = (address: string) => setContractAddress(address);
   const onSubmit = (e: FormEvent<HTMLFormElement>) => e.preventDefault();
   const onClick = () => onSearch?.(contractAddress);
-  const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => setContractAddress(e.target.value);
+  const onChangeInput = (e: ChangeEvent<HTMLInputElement>) =>
+    setContractAddress(e.target.value);
   const onKeyPress = (e: KeyboardEvent<HTMLInputElement>) => onEnter(e);
 
   const onEnter = (e: KeyboardEvent<HTMLInputElement>) => {

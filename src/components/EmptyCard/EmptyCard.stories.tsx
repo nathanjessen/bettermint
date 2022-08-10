@@ -1,8 +1,8 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { EmptyCard } from './EmptyCard';
 
 export default {
-  title: "Components/EmptyCard",
+  title: 'Components/EmptyCard',
   component: EmptyCard,
 } as Meta;
 

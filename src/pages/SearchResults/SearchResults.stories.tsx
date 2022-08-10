@@ -1,13 +1,13 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { SearchResults } from './SearchResults';
 
 export default {
-  title: "Pages/SearchResults",
+  title: 'Pages/SearchResults',
   component: SearchResults,
   parameters: {
     layout: 'fullscreen',
-  }
+  },
 } as Meta;
 
 const Template: Story = (args) => <SearchResults {...args} />;

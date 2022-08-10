@@ -1,2 +1,2 @@
-import { CollectionDetails } from "./CollectionDetails";
+import { CollectionDetails } from './CollectionDetails';
 export default CollectionDetails;

@@ -1,2 +1,2 @@
-import { EmptyCard } from "./EmptyCard";
+import { EmptyCard } from './EmptyCard';
 export default EmptyCard;

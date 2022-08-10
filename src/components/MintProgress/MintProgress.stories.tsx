@@ -1,13 +1,15 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { collections } from '../../data/collections';
-import { PureMintProgress, IPureMintProgressProps } from './MintProgress';
+import { IPureMintProgressProps, PureMintProgress } from './MintProgress';
 
 export default {
-  title: "Components/PureMintProgress",
+  title: 'Components/PureMintProgress',
   component: PureMintProgress,
 } as Meta;
 
-const Template: Story<IPureMintProgressProps> = (args) => <PureMintProgress {...args} />;
+const Template: Story<IPureMintProgressProps> = (args) => (
+  <PureMintProgress {...args} />
+);
 
 export const Collection = Template.bind({});
 Collection.args = {

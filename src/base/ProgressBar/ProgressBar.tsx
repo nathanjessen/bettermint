@@ -6,8 +6,8 @@ export const ProgressBar = ({ progress = 0 }: ProgressBarProps) => {
   return (
     <progress
       value={progress}
-      max="100"
-      className="progress progress-primary w-full"
+      max='100'
+      className='progress progress-primary w-full'
     />
   );
 };

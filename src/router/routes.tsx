@@ -1,11 +1,11 @@
-import { Route, MakeGenerics } from 'react-location';
+import { MakeGenerics, Route } from 'react-location';
 // import { API_PRICING, API_RESULTS } from '../constants/api';
 import { PATH_HOME, PATH_PRICING, PATH_RESULTS } from '../constants/paths';
 import { items } from '../data/items';
 import { tiers } from '../data/tiers';
-import LandingPage from "../pages/LandingPage";
-import Pricing from "../pages/Pricing";
-import SearchResults from "../pages/SearchResults";
+import LandingPage from '../pages/LandingPage';
+import Pricing from '../pages/Pricing';
+import SearchResults from '../pages/SearchResults';
 import { IItem, ITier } from '../typings/types';
 
 export type LocationGenerics = MakeGenerics<{
@@ -33,7 +33,7 @@ export const routes: Route<LocationGenerics>[] = [
     loader: async () => ({
       tiers: await fetchTiers(),
     }),
-  }
+  },
 ];
 
 async function fetchTiers() {

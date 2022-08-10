@@ -8,9 +8,13 @@ export const themeProvider: DecoratorFn = (Story) => (
 );
 
 export const unorderedList: DecoratorFn = (Story) => (
-  <ul><Story /></ul>
+  <ul>
+    <Story />
+  </ul>
 );
 
 export const orderedList: DecoratorFn = (Story) => (
-  <ol><Story /></ol>
+  <ol>
+    <Story />
+  </ol>
 );

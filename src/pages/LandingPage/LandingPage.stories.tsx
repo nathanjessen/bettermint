@@ -1,13 +1,13 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { LandingPage } from './LandingPage';
 
 export default {
-  title: "Pages/LandingPage",
+  title: 'Pages/LandingPage',
   component: LandingPage,
   parameters: {
     layout: 'fullscreen',
-  }
+  },
 } as Meta;
 
 const Template: Story = (args) => <LandingPage {...args} />;

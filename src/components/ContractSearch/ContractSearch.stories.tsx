@@ -1,17 +1,19 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { ZERO_ADDRESS } from '../../constants';
 
-import { PureContractSearch, IPureContractSearchProps } from './ContractSearch';
+import { IPureContractSearchProps, PureContractSearch } from './ContractSearch';
 
 export default {
-  title: "Components/ContractSearch",
+  title: 'Components/ContractSearch',
   component: PureContractSearch,
   args: {
-    contractAddress: ZERO_ADDRESS
+    contractAddress: ZERO_ADDRESS,
   },
 } as Meta;
 
-const Template: Story<IPureContractSearchProps> = (args) => <PureContractSearch {...args} />;
+const Template: Story<IPureContractSearchProps> = (args) => (
+  <PureContractSearch {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {};

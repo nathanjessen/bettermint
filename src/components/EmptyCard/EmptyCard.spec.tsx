@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from '@testing-library/react';
 import { Default } from './EmptyCard.stories';
 
 afterEach(cleanup);
@@ -13,10 +13,9 @@ afterEach(cleanup);
 // 	expect(tree).toMatchSnapshot();
 // });
 
-
-describe("EmptyCard", () => {
-  it("renders", () => {
+describe('EmptyCard', () => {
+  it('renders', () => {
     render(<Default {...Default.args} />);
-    expect(screen.queryAllByText("Empty")).toHaveLength(0);
+    expect(screen.queryAllByText('Empty')).toHaveLength(0);
   });
 });

@@ -1,9 +1,9 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { BenefitList, BenefitListProps } from './BenefitList';
 
 export default {
-  title: "Components/BenefitList",
+  title: 'Components/BenefitList',
   component: BenefitList,
 } as Meta;
 

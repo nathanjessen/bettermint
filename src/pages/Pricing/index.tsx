@@ -1,2 +1,2 @@
-import { Pricing } from "./Pricing";
+import { Pricing } from './Pricing';
 export default Pricing;

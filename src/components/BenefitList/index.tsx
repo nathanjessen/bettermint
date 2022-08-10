@@ -1,2 +1,2 @@
-import { BenefitList } from "./BenefitList";
+import { BenefitList } from './BenefitList';
 export default BenefitList;

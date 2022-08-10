@@ -1,2 +1,2 @@
-import { ResultCard } from "./ResultCard";
+import { ResultCard } from './ResultCard';
 export default ResultCard;

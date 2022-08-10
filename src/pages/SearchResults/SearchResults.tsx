@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import { useMatch } from 'react-location';
 // import useSWR from "swr";
-import { ICollection, IItem } from "../../typings/types";
-import CollectionDetails from "../../components/CollectionDetails";
-import ItemGrid, { EmptyGrid } from "../../components/ItemGrid";
+import { Button } from '../../base/Button/Button';
+import { Layout, LayoutLeft, LayoutRight } from '../../base/Layout';
+import CollectionDetails from '../../components/CollectionDetails';
+import Header from '../../components/Header';
+import ItemGrid, { EmptyGrid } from '../../components/ItemGrid';
+import { ZERO_ADDRESS } from '../../constants';
+import { collections } from '../../data/collections';
 import useContractAddress from '../../hooks/useContractAddress';
-import useExplorer from "../../hooks/useExplorer";
-import { Button } from "../../base/Button/Button";
-import { Layout, LayoutLeft, LayoutRight } from "../../base/Layout";
-import { collections } from "../../data/collections";
-import Header from "../../components/Header";
-import { LocationGenerics } from "../../router/routes";
-import { ZERO_ADDRESS } from "../../constants";
+import useExplorer from '../../hooks/useExplorer';
+import { LocationGenerics } from '../../router/routes';
+import { ICollection, IItem } from '../../typings/types';
 
 // const fetcher = (url: string) => fetch(url).then(resp => resp.json());
 
@@ -19,7 +19,8 @@ export const SearchResults = () => {
   const { items } = useMatch<LocationGenerics>().data;
   // const { data } = useSWR("https://dog.ceo/api/breeds/image/random", fetcher, { suspense: true });
   const [collection, setCollection] = useState<ICollection | undefined>();
-  const { contractAddress, resetContractAddress } = useContractAddress(ZERO_ADDRESS);
+  const { contractAddress, resetContractAddress } =
+    useContractAddress(ZERO_ADDRESS);
   const { addressExplorer, resetExplorer } = useExplorer();
   const [loading, setLoading] = useState<boolean>(false);
   const [directory, setDirectory] = useState<string>('');
@@ -51,11 +52,12 @@ export const SearchResults = () => {
 
   useEffect(() => {
     // TODO: update with common options
-    setDirectory(collection?.directory || collection?.metadata || collection?.api || '');
+    setDirectory(
+      collection?.directory || collection?.metadata || collection?.api || ''
+    );
 
     return () => setDirectory('');
   }, [collection]);
-
 
   // Upcoming Items
   useEffect(() => {
@@ -117,25 +119,43 @@ export const SearchResults = () => {
 
       <Layout>
         <LayoutLeft>
-          <div className="space-x-2">
-            <Button color="primary" variant="outline" onClick={onReset}>Reset</Button>
+          <div className='space-x-2'>
+            <Button color='primary' variant='outline' onClick={onReset}>
+              Reset
+            </Button>
 
-            <Button color="primary" as="a" href={addressExplorer} target="_blank" rel="noreferrer">
+            <Button
+              color='primary'
+              as='a'
+              href={addressExplorer}
+              target='_blank'
+              rel='noreferrer'>
               View on Explorer
             </Button>
           </div>
 
           {collection && (
-            <CollectionDetails collection={collection} explorerUrl={addressExplorer} />
+            <CollectionDetails
+              collection={collection}
+              explorerUrl={addressExplorer}
+            />
           )}
         </LayoutLeft>
 
         <LayoutRight>
           {collection ? (
             <>
-              <ItemGrid contractAddress={contractAddress} items={recent} directory={directory} />
-              <div className="divider"></div>
-              <ItemGrid contractAddress={contractAddress} items={upcoming} directory={directory} />
+              <ItemGrid
+                contractAddress={contractAddress}
+                items={recent}
+                directory={directory}
+              />
+              <div className='divider'></div>
+              <ItemGrid
+                contractAddress={contractAddress}
+                items={upcoming}
+                directory={directory}
+              />
             </>
           ) : (
             <EmptyGrid count={15} />

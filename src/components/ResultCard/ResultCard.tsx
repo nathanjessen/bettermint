@@ -1,4 +1,4 @@
-import { IItem } from "../../typings/types";
+import { IItem } from '../../typings/types';
 
 export interface IResultCardProps {
   directory?: string;
@@ -17,7 +17,7 @@ export const ResultCard = ({
         <a href={data.image} target='_blank' rel='noreferrer'>
           <img
             className='w-full object-scale-down'
-            style={{ minHeight: "100px" }}
+            style={{ minHeight: '100px' }}
             src={data.image}
             alt={data.name}
           />
@@ -39,9 +39,7 @@ export const ResultCard = ({
           </p>
         </div>
         <div className='flex flex-col items-end'>
-          <div className='flex-shrink-0'>
-            {/* Actions */}
-          </div>
+          <div className='flex-shrink-0'>{/* Actions */}</div>
         </div>
       </div>
     </div>
