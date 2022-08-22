@@ -40,7 +40,8 @@
     "coverage": "npm run test -- --coverage",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test-storybook": "test-storybook"
   },
   "eslintConfig": {
     "extends": [
@@ -72,6 +73,7 @@
   ],
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-coverage": "^0.0.4",
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-interactions": "^6.5.10",
     "@storybook/addon-links": "^6.5.10",
@@ -80,10 +82,15 @@
     "@storybook/node-logger": "^6.5.10",
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.10",
+    "@storybook/test-runner": "^0.5.0",
     "@storybook/testing-library": "^0.0.13",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "jest": "27.5.1",
     "msw": "^0.44.2",
     "prop-types": "^15.8.1",
-    "webpack": "^5.73.0"
+    "webpack": "^5.74.0"
+  },
+  "resolutions": {
+    "jest-playwright-preset": "^1.7.2"
   }
 }
