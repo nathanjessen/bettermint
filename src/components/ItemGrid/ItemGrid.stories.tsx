@@ -1,7 +1,7 @@
-import { Meta, Story } from '@storybook/react';
-import { ZERO_ADDRESS } from 'constants/index';
-import { items } from 'data/items';
-import { IItemGridProps, ItemGrid } from './ItemGrid';
+import { ZERO_ADDRESS } from '@/constants/index';
+import { items } from '@/data/items';
+import { Meta } from '@storybook/react';
+import { ItemGrid } from './ItemGrid';
 
 export default {
   title: 'Components/ItemGrid',
@@ -11,17 +11,18 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IItemGridProps> = (args) => <ItemGrid {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {};
-
-export const RecentItems = Template.bind({});
-RecentItems.args = {
-  items: items.slice(0, 5),
+export const Default = {
+  args: {},
 };
 
-export const Directory = Template.bind({});
-Directory.args = {
-  directory: 'directoryname',
+export const RecentItems = {
+  args: {
+    items: items.slice(0, 5),
+  },
+};
+
+export const Directory = {
+  args: {
+    directory: 'directoryname',
+  },
 };

@@ -1,7 +1,7 @@
 import { MakeGenerics, Route } from 'react-location';
 // import { API_PRICING, API_RESULTS } from '../constants/api';
-import { items } from 'data/items';
-import { tiers } from 'data/tiers';
+import { items } from '@/data/items';
+import { tiers } from '@/data/tiers';
 import { PATH_HOME, PATH_PRICING, PATH_RESULTS } from '../constants/paths';
 import LandingPage from '../pages/LandingPage';
 import Pricing from '../pages/Pricing';

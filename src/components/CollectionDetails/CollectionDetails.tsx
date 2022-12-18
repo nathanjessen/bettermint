@@ -1,5 +1,5 @@
-import Button from 'base/Button';
-import { ICollection } from 'typings/types';
+import Button from '@/base/Button';
+import { ICollection } from '@/typings/types';
 import MintProgress from '../MintProgress';
 
 export interface ICollectionDetailsProps {

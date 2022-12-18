@@ -1,6 +1,6 @@
+import { PolymorphicComponentProp } from '@/typings/polymorphic';
 import clsx from 'clsx';
 import { ElementType } from 'react';
-import { PolymorphicComponentProp } from 'typings/polymorphic';
 
 export type ButtonProps = {
   active?: boolean;

@@ -1,4 +1,4 @@
-import useContractAddress from 'hooks/useContractAddress';
+import useContractAddress from '@/hooks/useContractAddress';
 import { ChangeEvent, FormEvent, KeyboardEvent } from 'react';
 import { PureContractSearch } from './ContractSearch';
 

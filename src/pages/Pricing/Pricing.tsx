@@ -1,7 +1,7 @@
-import Header from 'components/Header';
-import PriceTiers from 'components/PriceTiers';
+import Header from '@/components/Header';
+import PriceTiers from '@/components/PriceTiers';
+import { LocationGenerics } from '@/router/routes';
 import { useMatch } from 'react-location';
-import { LocationGenerics } from 'router/routes';
 
 export const Pricing = () => {
   const { tiers } = useMatch<LocationGenerics>().data;

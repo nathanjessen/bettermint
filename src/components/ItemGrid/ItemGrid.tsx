@@ -1,6 +1,6 @@
-import Loader from 'base/Loader';
+import Loader from '@/base/Loader';
+import { IItem } from '@/typings/types';
 import { Suspense } from 'react';
-import { IItem } from 'typings/types';
 import ResultCard from '../ResultCard';
 
 export interface IItemGridProps {

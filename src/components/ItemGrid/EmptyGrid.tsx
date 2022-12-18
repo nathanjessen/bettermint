@@ -1,4 +1,4 @@
-import EmptyCard from 'components/EmptyCard';
+import EmptyCard from '@/components/EmptyCard';
 
 type EmptyGridProps = {
   count?: number;

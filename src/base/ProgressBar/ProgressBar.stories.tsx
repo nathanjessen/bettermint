@@ -1,32 +1,35 @@
-import { Meta, Story } from '@storybook/react';
-import { ProgressBar, ProgressBarProps } from './ProgressBar';
+import { Meta } from '@storybook/react';
+import { ProgressBar } from './ProgressBar';
 
 export default {
   title: 'Base/ProgressBar',
   component: ProgressBar,
 } as Meta;
 
-const Template: Story<ProgressBarProps> = (args) => <ProgressBar {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {};
-
-export const ProgressSingle = Template.bind({});
-ProgressSingle.args = {
-  progress: 1,
+export const Default = {
+  args: {},
 };
 
-export const ProgressHalf = Template.bind({});
-ProgressHalf.args = {
-  progress: 50,
+export const ProgressSingle = {
+  args: {
+    progress: 1,
+  },
 };
 
-export const Progress99 = Template.bind({});
-Progress99.args = {
-  progress: 99,
+export const ProgressHalf = {
+  args: {
+    progress: 50,
+  },
 };
 
-export const ProgressFull = Template.bind({});
-ProgressFull.args = {
-  progress: 100,
+export const Progress99 = {
+  args: {
+    progress: 99,
+  },
+};
+
+export const ProgressFull = {
+  args: {
+    progress: 100,
+  },
 };

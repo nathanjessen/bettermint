@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
-import { tiers } from 'data/tiers';
-import { IPriceTiersProps, PriceTiers } from './PriceTiers';
+import { tiers } from '@/data/tiers';
+import { Meta } from '@storybook/react';
+import { PriceTiers } from './PriceTiers';
 
 export default {
   title: 'Components/PriceTiers',
@@ -10,7 +10,6 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IPriceTiersProps> = (args) => <PriceTiers {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  args: {},
+};

@@ -1,7 +1,6 @@
-import { Meta, Story } from '@storybook/react';
-
+import { Meta } from '@storybook/react';
 import { unorderedList } from '../../../.storybook/decorators';
-import { BenefitListItem, BenefitListItemProps } from './BenefitListItem';
+import { BenefitListItem } from './BenefitListItem';
 
 export default {
   title: 'Components/BenefitListItem',
@@ -9,15 +8,13 @@ export default {
   decorators: [unorderedList],
 } as Meta;
 
-const Template: Story<BenefitListItemProps> = (args) => (
-  <BenefitListItem {...args} />
-);
+export const Empty = {
+  args: {},
+};
 
-export const Empty = Template.bind({});
-Empty.args = {};
-
-export const Content = Template.bind({});
-Content.args = {
-  title: 'Preview',
-  description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+export const Content = {
+  args: {
+    title: 'Preview',
+    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+  },
 };

@@ -1,5 +1,5 @@
+import { PolymorphicComponentProp } from '@/typings/polymorphic';
 import { ElementType } from 'react';
-import { PolymorphicComponentProp } from 'typings/polymorphic';
 
 export type BenefitListItemProps = {
   title?: string;

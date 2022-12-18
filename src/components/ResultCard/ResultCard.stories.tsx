@@ -1,7 +1,6 @@
-import { Meta, Story } from '@storybook/react';
-import { items } from 'data/items';
-
-import { IResultCardProps, ResultCard } from './ResultCard';
+import { items } from '@/data/items';
+import { Meta } from '@storybook/react';
+import { ResultCard } from './ResultCard';
 
 export default {
   title: 'Components/ResultCard',
@@ -11,12 +10,12 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IResultCardProps> = (args) => <ResultCard {...args} />;
+export const Default = {
+  args: {},
+};
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Directory = Template.bind({});
-Directory.args = {
-  directory: 'directoryPath',
+export const Directory = {
+  args: {
+    directory: 'directoryPath',
+  },
 };

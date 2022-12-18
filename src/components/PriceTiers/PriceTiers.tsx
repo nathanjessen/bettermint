@@ -1,4 +1,4 @@
-import { ITier } from 'typings/types';
+import { ITier } from '@/typings/types';
 import { PriceTier } from './PriceTier';
 
 export interface IPriceTiersProps {

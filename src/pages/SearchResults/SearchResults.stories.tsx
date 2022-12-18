@@ -1,5 +1,4 @@
-import { Meta, Story } from '@storybook/react';
-
+import { Meta } from '@storybook/react';
 import { SearchResults } from './SearchResults';
 
 export default {
@@ -10,7 +9,6 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => <SearchResults {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  args: {},
+};

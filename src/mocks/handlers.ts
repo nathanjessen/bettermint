@@ -1,5 +1,5 @@
-import { items } from 'data/items';
-import { tiers } from 'data/tiers';
+import { items } from '@/data/items';
+import { tiers } from '@/data/tiers';
 import { rest } from 'msw';
 import { API_PRICING, API_RESULTS } from '../constants/api';
 

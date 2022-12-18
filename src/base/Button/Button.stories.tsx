@@ -1,127 +1,148 @@
-import { Meta, Story } from '@storybook/react';
-
-import { Button, ButtonProps } from './Button';
+import { Meta } from '@storybook/react';
+import { Button } from './Button';
 
 export default {
   title: 'Base/Button',
   component: Button,
+  args: {
+    children: 'Button',
+  },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => (
-  <Button {...args}>Button</Button>
-);
-
-export const Primary = Template.bind({});
-Primary.args = {
-  color: 'primary',
+export const Primary = {
+  args: {
+    color: 'primary',
+  },
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  color: 'secondary',
+export const Secondary = {
+  args: {
+    color: 'secondary',
+  },
 };
 
-export const Accent = Template.bind({});
-Accent.args = {
-  color: 'accent',
+export const Accent = {
+  args: {
+    color: 'accent',
+  },
 };
 
-export const Info = Template.bind({});
-Info.args = {
-  color: 'info',
+export const Info = {
+  args: {
+    color: 'info',
+  },
 };
 
-export const Success = Template.bind({});
-Success.args = {
-  color: 'success',
+export const Success = {
+  args: {
+    color: 'success',
+  },
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  color: 'warning',
+export const Warning = {
+  args: {
+    color: 'warning',
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  color: 'error',
+export const Error = {
+  args: {
+    color: 'error',
+  },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'lg',
+export const Large = {
+  args: {
+    size: 'lg',
+  },
 };
 
-export const Medium = Template.bind({});
-Medium.args = {
-  size: 'md',
+export const Medium = {
+  args: {
+    size: 'md',
+  },
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'sm',
+export const Small = {
+  args: {
+    size: 'sm',
+  },
 };
 
-export const XSmall = Template.bind({});
-XSmall.args = {
-  size: 'xs',
+export const XSmall = {
+  args: {
+    size: 'xs',
+  },
 };
 
-export const Wide = Template.bind({});
-Wide.args = {
-  shape: 'wide',
+export const Wide = {
+  args: {
+    shape: 'wide',
+  },
 };
 
-export const Block = Template.bind({});
-Block.args = {
-  shape: 'block',
+export const Block = {
+  args: {
+    shape: 'block',
+  },
 };
 
-export const Circle = Template.bind({});
-Circle.args = {
-  shape: 'circle',
+export const Circle = {
+  args: {
+    shape: 'circle',
+  },
 };
 
-export const Square = Template.bind({});
-Square.args = {
-  shape: 'square',
+export const Square = {
+  args: {
+    shape: 'square',
+  },
 };
 
-export const Ghost = Template.bind({});
-Ghost.args = {
-  variant: 'ghost',
+export const Ghost = {
+  args: {
+    variant: 'ghost',
+  },
 };
 
-export const Link = Template.bind({});
-Link.args = {
-  variant: 'link',
+export const Link = {
+  args: {
+    variant: 'link',
+  },
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-  variant: 'outline',
+export const Outline = {
+  args: {
+    variant: 'outline',
+  },
 };
 
-export const Glass = Template.bind({});
-Glass.args = {
-  variant: 'glass',
+export const Glass = {
+  args: {
+    variant: 'glass',
+  },
 };
 
-export const NoAnimation = Template.bind({});
-NoAnimation.args = {
-  animation: 'no-animation',
+export const NoAnimation = {
+  args: {
+    animation: 'no-animation',
+  },
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
-  loading: true,
+export const Loading = {
+  args: {
+    loading: true,
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
+export const Disabled = {
+  args: {
+    disabled: true,
+  },
 };
 
-export const Active = Template.bind({});
-Active.args = {
-  active: true,
+export const Active = {
+  args: {
+    active: true,
+  },
 };

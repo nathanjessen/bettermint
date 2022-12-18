@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import { EmptyGrid } from './EmptyGrid';
 
 export default {
@@ -6,12 +6,12 @@ export default {
   component: EmptyGrid,
 } as Meta;
 
-const Template: Story = (args) => <EmptyGrid {...args} />;
+export const Default = {
+  args: {},
+};
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Count = Template.bind({});
-Count.args = {
-  count: 5,
+export const Count = {
+  args: {
+    count: 5,
+  },
 };

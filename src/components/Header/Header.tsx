@@ -1,4 +1,4 @@
-import { PATH_HOME, PATH_PRICING, PATH_RESULTS } from 'constants/paths';
+import { PATH_HOME, PATH_PRICING, PATH_RESULTS } from '@/constants/paths';
 import { Link } from 'react-location';
 
 export const Header = () => {
