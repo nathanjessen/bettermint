@@ -68,6 +68,7 @@
     "@storybook/addon-interactions": "^7.0.0-beta.12",
     "@storybook/addon-links": "^7.0.0-beta.12",
     "@storybook/builder-vite": "^7.0.0-beta.12",
+    "@storybook/jest": "^0.0.10",
     "@storybook/node-logger": "^7.0.0-beta.12",
     "@storybook/react": "^7.0.0-beta.12",
     "@storybook/react-vite": "^7.0.0-alpha.25",
