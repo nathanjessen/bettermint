@@ -1,8 +1,8 @@
-import { Meta } from '@storybook/react';
-import { EmptyGrid } from './EmptyGrid';
+import { Meta } from "@storybook/react";
+import { EmptyGrid } from "./EmptyGrid";
 
 export default {
-  title: 'Components/EmptyGrid',
+  title: "Components/EmptyGrid",
   component: EmptyGrid,
 } as Meta;
 

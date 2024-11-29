@@ -1,9 +1,9 @@
-import { collections } from '@/data/collections';
-import { Meta } from '@storybook/react';
-import { CollectionDetails } from './CollectionDetails';
+import { collections } from "@/data/collections";
+import { Meta } from "@storybook/react";
+import { CollectionDetails } from "./CollectionDetails";
 
 export default {
-  title: 'Components/CollectionDetails',
+  title: "Components/CollectionDetails",
   component: CollectionDetails,
 } as Meta;
 

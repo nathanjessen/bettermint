@@ -1,131 +1,131 @@
-import { Meta } from '@storybook/react';
-import { Button } from './Button';
+import { Meta } from "@storybook/react";
+import { Button } from "./Button";
 
 export default {
-  title: 'Base/Button',
+  title: "Base/Button",
   component: Button,
   args: {
-    children: 'Button',
+    children: "Button",
   },
 } as Meta;
 
 export const Primary = {
   args: {
-    color: 'primary',
+    color: "primary",
   },
 };
 
 export const Secondary = {
   args: {
-    color: 'secondary',
+    color: "secondary",
   },
 };
 
 export const Accent = {
   args: {
-    color: 'accent',
+    color: "accent",
   },
 };
 
 export const Info = {
   args: {
-    color: 'info',
+    color: "info",
   },
 };
 
 export const Success = {
   args: {
-    color: 'success',
+    color: "success",
   },
 };
 
 export const Warning = {
   args: {
-    color: 'warning',
+    color: "warning",
   },
 };
 
 export const Error = {
   args: {
-    color: 'error',
+    color: "error",
   },
 };
 
 export const Large = {
   args: {
-    size: 'lg',
+    size: "lg",
   },
 };
 
 export const Medium = {
   args: {
-    size: 'md',
+    size: "md",
   },
 };
 
 export const Small = {
   args: {
-    size: 'sm',
+    size: "sm",
   },
 };
 
 export const XSmall = {
   args: {
-    size: 'xs',
+    size: "xs",
   },
 };
 
 export const Wide = {
   args: {
-    shape: 'wide',
+    shape: "wide",
   },
 };
 
 export const Block = {
   args: {
-    shape: 'block',
+    shape: "block",
   },
 };
 
 export const Circle = {
   args: {
-    shape: 'circle',
+    shape: "circle",
   },
 };
 
 export const Square = {
   args: {
-    shape: 'square',
+    shape: "square",
   },
 };
 
 export const Ghost = {
   args: {
-    variant: 'ghost',
+    variant: "ghost",
   },
 };
 
 export const Link = {
   args: {
-    variant: 'link',
+    variant: "link",
   },
 };
 
 export const Outline = {
   args: {
-    variant: 'outline',
+    variant: "outline",
   },
 };
 
 export const Glass = {
   args: {
-    variant: 'glass',
+    variant: "glass",
   },
 };
 
 export const NoAnimation = {
   args: {
-    animation: 'no-animation',
+    animation: "no-animation",
   },
 };
 

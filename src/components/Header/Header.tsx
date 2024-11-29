@@ -1,5 +1,5 @@
 import { PATH_HOME, PATH_PRICING, PATH_RESULTS } from '@/constants/paths';
-import { Link } from 'react-location';
+import { Link } from 'react-router-dom';
 import logo from '/logo192.png';
 
 export const Header = () => {

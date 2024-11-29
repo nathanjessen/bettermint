@@ -1,14 +1,16 @@
 import { items } from '@/data/items';
 import { tiers } from '@/data/tiers';
-import { rest } from 'msw';
+import { http, HttpResponse, delay } from 'msw';
 import { API_PRICING, API_RESULTS } from '../constants/api';
 
-const pricingHandler = rest.get(API_PRICING, (req, res, ctx) => {
-  return res(ctx.delay(500), ctx.status(200), ctx.json(items));
+const pricingHandler = http.get(API_PRICING, async () => {
+  await delay(500);
+  return HttpResponse.json(items);
 });
 
-const resultsHandler = rest.get(API_RESULTS, (req, res, ctx) => {
-  return res(ctx.delay(500), ctx.status(200), ctx.json(tiers));
+const resultsHandler = http.get(API_RESULTS, async () => {
+  await delay(500);
+  return HttpResponse.json(tiers);
 });
 
 export const handlers = [pricingHandler, resultsHandler];

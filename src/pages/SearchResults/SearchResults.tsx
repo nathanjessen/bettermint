@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useMatch } from 'react-location';
+import { useParams } from 'react-router-dom';
 // import useSWR from "swr";
 import { Button } from '@/base/Button/Button';
 import { Layout, LayoutLeft, LayoutRight } from '@/base/Layout';
@@ -10,13 +10,13 @@ import { ZERO_ADDRESS } from '@/constants/index';
 import { collections } from '@/data/collections';
 import useContractAddress from '@/hooks/useContractAddress';
 import useExplorer from '@/hooks/useExplorer';
-import { LocationGenerics } from '@/router/routes';
 import { ICollection, IItem } from '@/typings/types';
 
 // const fetcher = (url: string) => fetch(url).then(resp => resp.json());
 
 export const SearchResults = () => {
-  const { items } = useMatch<LocationGenerics>().data;
+  const params = useParams();
+  const { items } = params;
   // const { data } = useSWR("https://dog.ceo/api/breeds/image/random", fetcher, { suspense: true });
   const [collection, setCollection] = useState<ICollection | undefined>();
   const { contractAddress, resetContractAddress } =

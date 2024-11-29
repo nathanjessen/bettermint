@@ -1,11 +1,11 @@
-import { Meta } from '@storybook/react';
-import { LandingPage } from './LandingPage';
+import { Meta } from "@storybook/react";
+import { LandingPage } from "./LandingPage";
 
 export default {
-  title: 'Pages/LandingPage',
+  title: "Pages/LandingPage",
   component: LandingPage,
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 } as Meta;
 

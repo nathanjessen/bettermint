@@ -1,10 +1,10 @@
-import { ZERO_ADDRESS } from '@/constants/index';
-import { items } from '@/data/items';
-import { Meta } from '@storybook/react';
-import { ItemGrid } from './ItemGrid';
+import { ZERO_ADDRESS } from "@/constants/index";
+import { items } from "@/data/items";
+import { Meta } from "@storybook/react";
+import { ItemGrid } from "./ItemGrid";
 
 export default {
-  title: 'Components/ItemGrid',
+  title: "Components/ItemGrid",
   component: ItemGrid,
   args: {
     contractAddress: ZERO_ADDRESS,
@@ -23,6 +23,6 @@ export const RecentItems = {
 
 export const Directory = {
   args: {
-    directory: 'directoryname',
+    directory: "directoryname",
   },
 };

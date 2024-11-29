@@ -1,9 +1,9 @@
-import { collections } from '@/data/collections';
-import { Meta } from '@storybook/react';
-import { PureMintProgress } from './MintProgress';
+import { collections } from "@/data/collections";
+import { Meta } from "@storybook/react";
+import { PureMintProgress } from "./MintProgress";
 
 export default {
-  title: 'Components/PureMintProgress',
+  title: "Components/PureMintProgress",
   component: PureMintProgress,
 } as Meta;
 

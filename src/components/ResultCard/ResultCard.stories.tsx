@@ -1,9 +1,9 @@
-import { items } from '@/data/items';
-import { Meta } from '@storybook/react';
-import { ResultCard } from './ResultCard';
+import { items } from "@/data/items";
+import { Meta } from "@storybook/react";
+import { ResultCard } from "./ResultCard";
 
 export default {
-  title: 'Components/ResultCard',
+  title: "Components/ResultCard",
   component: ResultCard,
   args: {
     item: items[0],
@@ -16,6 +16,6 @@ export const Default = {
 
 export const Directory = {
   args: {
-    directory: 'directoryPath',
+    directory: "directoryPath",
   },
 };
