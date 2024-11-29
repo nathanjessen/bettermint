@@ -4,7 +4,7 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "@headlessui/react": "^1.7.17",
+    "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.1.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
@@ -15,7 +15,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loading": "^2.0.3",
-    "react-location": "^3.3.4",
+    "react-router-dom": "^7.0.1",
     "swr": "^2.2.4",
     "tailwindcss": "^3.3.6"
   },
@@ -25,30 +25,20 @@
     "prebuild": "npm run build:tailwind",
     "dev": "vite",
     "build": "tsc && vite build",
-    "coverage": "vitest run --coverage",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "test": "vitest",
-    "test-storybook": "test-storybook"
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "plugins": [
-      "react-hooks"
-    ],
+    "extends": ["react-app"],
+    "plugins": ["react-hooks"],
     "rules": {
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "off"
     },
     "overrides": [
       {
-        "files": [
-          "**/*.stories.*"
-        ],
+        "files": ["**/*.stories.*"],
         "rules": {
           "import/no-anonymous-default-export": "off"
         }
@@ -70,25 +60,17 @@
     "@storybook/node-logger": "^8.4.5",
     "@storybook/react": "^8.4.5",
     "@storybook/react-vite": "^8.4.5",
-    "@storybook/test": "^8.4.5",
-    "@storybook/test-runner": "^0.20.0",
-    "@testing-library/jest-dom": "^6.1.5",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/user-event": "^14.5.1",
-    "@types/node": "^20.10.4",
+    "@types/node": "^22.10.1",
     "@types/react": "^18.2.42",
     "@types/react-dom": "^18.2.17",
     "@types/styled-components": "^5.1.32",
     "@vitejs/plugin-react": "^4.0.4",
-    "@vitest/coverage-v8": "^1.0.4",
     "autoprefixer": "^10.4.16",
-    "happy-dom": "^15.11.7",
     "msw": "^2.0.11",
     "prop-types": "^15.8.1",
     "storybook": "^8.4.5",
     "typescript": "^5.3.3",
-    "vite": "^4.5.1",
-    "vitest": "^1.0.4"
+    "vite": "^5.4.11"
   },
   "msw": {
     "workerDirectory": "public"
