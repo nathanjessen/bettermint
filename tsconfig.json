@@ -17,9 +17,14 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/base/*": ["src/base/*"],
+      "@/components/*": ["src/components/*"],
+      "@/constants/*": ["src/constants/*"],
+      "@/data/*": ["src/data/*"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/router/*": ["src/router/*"],
+      "@/typings/*": ["src/typings/*"]
     },
-    "typeRoots": ["./node_modules/@types", "./src"]
   },
   "include": ["src", ".storybook"],
   "references": [{ "path": "./tsconfig.node.json" }]
