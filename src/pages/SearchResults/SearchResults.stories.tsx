@@ -1,14 +1,17 @@
-import { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { SearchResults } from "./SearchResults";
 
-export default {
+const meta = {
   title: "Pages/SearchResults",
   component: SearchResults,
   parameters: {
     layout: "fullscreen",
   },
-} as Meta;
+} satisfies Meta<typeof SearchResults>;
 
-export const Default = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   args: {},
 };

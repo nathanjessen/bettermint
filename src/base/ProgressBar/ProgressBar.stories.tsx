@@ -1,35 +1,31 @@
-import { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { ProgressBar } from "./ProgressBar";
 
-export default {
+const meta = {
   title: "Base/ProgressBar",
   component: ProgressBar,
-} as Meta;
-
-export const Default = {
-  args: {},
-};
-
-export const ProgressSingle = {
   args: {
-    progress: 1,
+    value: 0
+  }
+} satisfies Meta<typeof ProgressBar>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Empty: Story = {
+  args: {
+    value: 0
   },
 };
 
-export const ProgressHalf = {
+export const Half: Story = {
   args: {
-    progress: 50,
+    value: 50
   },
 };
 
-export const Progress99 = {
+export const Full: Story = {
   args: {
-    progress: 99,
-  },
-};
-
-export const ProgressFull = {
-  args: {
-    progress: 100,
+    value: 100
   },
 };

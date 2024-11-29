@@ -1,11 +1,14 @@
-import { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { EmptyCard } from "./EmptyCard";
 
-export default {
+const meta = {
   title: "Components/EmptyCard",
   component: EmptyCard,
-} as Meta;
+} satisfies Meta<typeof EmptyCard>;
 
-export const Default = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   args: {},
 };

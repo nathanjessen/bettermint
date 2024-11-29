@@ -1,12 +1,12 @@
 export interface ProgressBarProps {
-  progress?: number;
+  value?: number;
 }
 
-export const ProgressBar = ({ progress = 0 }: ProgressBarProps) => {
+export const ProgressBar =  ({ value = 0 }: ProgressBarProps) => {
   return (
     <progress
-      value={progress}
-      max='100'
+      value={value}
+      max={100}
       className='progress progress-primary w-full'
     />
   );

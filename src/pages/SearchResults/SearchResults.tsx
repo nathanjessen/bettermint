@@ -16,7 +16,7 @@ import { ICollection, IItem } from '@/typings/types';
 
 export const SearchResults = () => {
   const params = useParams();
-  const { items } = params;
+  const { items: itemsParam } = params;
   // const { data } = useSWR("https://dog.ceo/api/breeds/image/random", fetcher, { suspense: true });
   const [collection, setCollection] = useState<ICollection | undefined>();
   const { contractAddress, resetContractAddress } =
@@ -96,18 +96,23 @@ export const SearchResults = () => {
         console.log('Failed to fetch');
       }
 
-      if (items) {
-        // setRecent(prevItems);
-        setRecent(items.slice(0, 5));
-        // setUpcoming(tempItems);
-        setUpcoming(items.slice(5, items.length));
+      if (itemsParam) {
+        try {
+          const parsedItems: IItem[] = JSON.parse(decodeURIComponent(itemsParam));
+          if (parsedItems && Array.isArray(parsedItems)) {
+            setRecent(parsedItems.slice(0, 5));
+            setUpcoming(parsedItems.slice(5));
+          }
+        } catch (error) {
+          console.error('Failed to parse items:', error);
+        }
       }
     };
 
     getItems().then(() => setLoading(false));
 
     return () => controller?.abort();
-  }, [collection]);
+  }, [collection, itemsParam]);
 
   if (loading) {
     return null;
