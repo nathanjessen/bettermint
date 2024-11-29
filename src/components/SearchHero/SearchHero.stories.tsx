@@ -1,8 +1,8 @@
-import { Meta } from '@storybook/react';
-import { SearchHero } from './SearchHero';
+import { Meta } from "@storybook/react";
+import { SearchHero } from "./SearchHero";
 
 export default {
-  title: 'Components/SearchHero',
+  title: "Components/SearchHero",
   component: SearchHero,
 } as Meta;
 

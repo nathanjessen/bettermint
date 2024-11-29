@@ -1,11 +1,11 @@
-import { Meta } from '@storybook/react';
-import { Pricing } from './Pricing';
+import { Meta } from "@storybook/react";
+import { Pricing } from "./Pricing";
 
 export default {
-  title: 'Pages/Pricing',
+  title: "Pages/Pricing",
   component: Pricing,
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 } as Meta;
 

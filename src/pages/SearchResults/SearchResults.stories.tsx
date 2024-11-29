@@ -1,11 +1,11 @@
-import { Meta } from '@storybook/react';
-import { SearchResults } from './SearchResults';
+import { Meta } from "@storybook/react";
+import { SearchResults } from "./SearchResults";
 
 export default {
-  title: 'Pages/SearchResults',
+  title: "Pages/SearchResults",
   component: SearchResults,
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 } as Meta;
 

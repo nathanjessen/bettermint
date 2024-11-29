@@ -1,9 +1,9 @@
-import { tiers } from '@/data/tiers';
-import { Meta } from '@storybook/react';
-import { PriceTier } from './PriceTier';
+import { tiers } from "@/data/tiers";
+import { Meta } from "@storybook/react";
+import { PriceTier } from "./PriceTier";
 
 export default {
-  title: 'Components/PriceTier',
+  title: "Components/PriceTier",
   component: PriceTier,
   args: {
     tier: tiers[0],

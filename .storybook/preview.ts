@@ -1,7 +1,6 @@
 import '../src/styles/tailwind.output.css';
 
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
   backgrounds: { disable: true },
   controls: {
     expanded: true,
@@ -11,3 +10,4 @@ export const parameters = {
     },
   },
 };
+export const tags = ['autodocs'];

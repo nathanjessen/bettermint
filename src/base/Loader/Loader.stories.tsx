@@ -1,8 +1,8 @@
-import { Meta } from '@storybook/react';
-import { Loader } from './Loader';
+import { Meta } from "@storybook/react";
+import { Loader } from "./Loader";
 
 export default {
-  title: 'Base/Loader',
+  title: "Base/Loader",
   component: Loader,
 } as Meta;
 
