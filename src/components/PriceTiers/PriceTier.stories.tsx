@@ -1,15 +1,18 @@
 import { tiers } from "@/data/tiers";
-import { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { PriceTier } from "./PriceTier";
 
-export default {
+const meta = {
   title: "Components/PriceTier",
   component: PriceTier,
   args: {
     tier: tiers[0],
   },
-} as Meta;
+} satisfies Meta<typeof PriceTier>;
 
-export const Default = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   args: {},
 };

@@ -1,147 +1,150 @@
-import { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./Button";
 
-export default {
+const meta = {
   title: "Base/Button",
   component: Button,
   args: {
     children: "Button",
   },
-} as Meta;
+} satisfies Meta<typeof Button>;
 
-export const Primary = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Primary: Story = {
   args: {
     color: "primary",
   },
 };
 
-export const Secondary = {
+export const Secondary: Story = {
   args: {
     color: "secondary",
   },
 };
 
-export const Accent = {
+export const Accent: Story = {
   args: {
     color: "accent",
   },
 };
 
-export const Info = {
+export const Info: Story = {
   args: {
     color: "info",
   },
 };
 
-export const Success = {
+export const Success: Story = {
   args: {
     color: "success",
   },
 };
 
-export const Warning = {
+export const Warning: Story = {
   args: {
     color: "warning",
   },
 };
 
-export const Error = {
+export const Error: Story = {
   args: {
     color: "error",
   },
 };
 
-export const Large = {
-  args: {
-    size: "lg",
-  },
-};
-
-export const Medium = {
-  args: {
-    size: "md",
-  },
-};
-
-export const Small = {
-  args: {
-    size: "sm",
-  },
-};
-
-export const XSmall = {
+export const XSmall: Story = {
   args: {
     size: "xs",
   },
 };
 
-export const Wide = {
+export const Small: Story = {
+  args: {
+    size: "sm",
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    size: "md",
+  },
+};
+
+export const Large: Story = {
+  args: {
+    size: "lg",
+  },
+};
+
+export const Wide: Story = {
   args: {
     shape: "wide",
   },
 };
 
-export const Block = {
+export const Block: Story = {
   args: {
     shape: "block",
   },
 };
 
-export const Circle = {
+export const Circle: Story = {
   args: {
     shape: "circle",
   },
 };
 
-export const Square = {
+export const Square: Story = {
   args: {
     shape: "square",
   },
 };
 
-export const Ghost = {
+export const Ghost: Story = {
   args: {
     variant: "ghost",
   },
 };
 
-export const Link = {
+export const Link: Story = {
   args: {
     variant: "link",
   },
 };
 
-export const Outline = {
+export const Outline: Story = {
   args: {
     variant: "outline",
   },
 };
 
-export const Glass = {
+export const Glass: Story = {
   args: {
     variant: "glass",
   },
 };
 
-export const NoAnimation = {
+export const NoAnimation: Story = {
   args: {
     animation: "no-animation",
   },
 };
 
-export const Loading = {
+export const Loading: Story = {
   args: {
     loading: true,
   },
 };
 
-export const Disabled = {
+export const Disabled: Story = {
   args: {
     disabled: true,
   },
 };
 
-export const Active = {
+export const Active: Story = {
   args: {
     active: true,
   },

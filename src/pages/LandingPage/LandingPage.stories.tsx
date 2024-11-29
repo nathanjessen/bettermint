@@ -1,14 +1,17 @@
-import { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { LandingPage } from "./LandingPage";
 
-export default {
+const meta = {
   title: "Pages/LandingPage",
   component: LandingPage,
   parameters: {
     layout: "fullscreen",
   },
-} as Meta;
+} satisfies Meta<typeof LandingPage>;
 
-export const Default = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   args: {},
 };

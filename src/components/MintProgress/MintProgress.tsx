@@ -22,7 +22,7 @@ export const PureMintProgress = ({ collection }: IPureMintProgressProps) => {
 
   return (
     <div aria-hidden='true'>
-      <ProgressBar progress={progress} />
+      <ProgressBar value={progress} />
 
       <div className='hidden sm:grid grid-cols-3 text-sm font-medium text-gray-600 mt-4'>
         <div className='text-left'>0</div>

@@ -1,13 +1,16 @@
 import { collections } from "@/data/collections";
-import { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { CollectionDetails } from "./CollectionDetails";
 
-export default {
+const meta = {
   title: "Components/CollectionDetails",
   component: CollectionDetails,
-} as Meta;
+} satisfies Meta<typeof CollectionDetails>;
 
-export const Default = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   args: {
     collection: collections[0],
   },
